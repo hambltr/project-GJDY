@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+@import url(./Normalize.css);
+
+/* reset.css가 아닌 Normalize.css로 파일 변경 
+    모든 브라우저간의 View를 통일 시켜줍니다. */
+
+/* 일반 텍스트 영역 1rem
+소메뉴타이틀(링크O) 1.3rem
+단순타이틀(링크x) 2rem */
+
+/* 버튼/인풋박스 height:40px
+기본 버튼 : 90px
+블록버튼&inputbox width: */
+
+/* 버튼의 경우 색을 조금 손봤는데
+    디폴트 값이 회색인 경우, 대체로 비활성화 된
+    인식을 주기 때문에 저희 사이트의 아이덴티티
+    색상을 사용해보았습니다. */
+
+/* moblie 화면으로 볼 때 contents-wrap 부분에 
+발작이 일어났었으나, 이는 곧 진압되었습니다. */
+
+/* 요소 검사를 하실 때 body가 왜 중앙에 있는지,
+    해당 현상은 버그입니다 놀라지 마시길 바랍니다. 
+    잡는법은 저도 모름 */
+
+/* 작업 하실 때, 모든 작업물은
+contents-wrap 요소 안쪽에 넣어주시면 됩니다. */
+
+/* 전달드리는 요소들은 모든 요소들이 
+    확정 및 정리된 것이 아닙니다.
+    필요하시다면 추가로 공유해주세요. */
+
+
+/* 기본 공통 요소 */
+body {
+    margin: 0 auto;
+    width: 576px;
+    height: 100vh;
+    background: #ffeedd;
+}
+
+div,input {
+    box-sizing: border-box;
+}
+
+/* 유저가 사용하는 영역입니다. */
+.view {
+    background: #fff;
+}
+
+.contents-wrap {
+    width: 576px;
+    min-height: 100vh;
+    padding-top: 88px;
+    padding-bottom: 98px;
+    overflow: hidden;
+}
+
+
+/* 숨겨진 어플깔아무새. 
+width가 1200미만일 땐, 숨겨져 있습니다. */
+.nav-side {
+    width: 0px;
+    height: 0px;
+}
+
+/* 어플깔아무새 - img 요소 조정 */
+.nav-side img {
+    width: 100%;
+}
+
+/* flex 영역 감싸기 */
+.flex-box{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1;
+    justify-content:center;
+}
+
+/* 화면이 1200px 이상일 때 적용되는 요소 
+   미디어쿼리는 항상 css 최하단에 위치시켜주세요!! */
+@media screen and (min-width : 1200px) {
+
+    /* 컨텐츠 우측으로 밀기 */
+        body {
+            margin: 0;
+            position: relative;
+            left: 50%;  
+        }
+    
+    /* 좌측에 앱 다운로드 유도창 띄우기 */
+        .nav-side {
+            width: 375px;
+            font-family: "S-Core Dream 4";
+            position: fixed;
+            top: 30%;
+            left: 15%;
+        }
+        
+    }
+
