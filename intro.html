@@ -10,23 +10,143 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumHarABeoJiEuiNaNum.css" rel="stylesheet">
     <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="./parallax.js-1.5.0/parallax.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="intro.css">
+    <link rel="stylesheet" type="text/css" href="./intro.css">
 
     <title>소개페이지</title>
     <link rel="icon" href="icon/favicon.ico">
 </head>
+
 <body>
-    
+    <div class="parallax-container">
+        <div class="parallax-layer layer1"></div>
+        <div class="parallax-layer layer2"></div>
+        <div class="parallax-layer layer3"></div>
+        <div class="parallax-layer layer4"></div>
+        <div class="parallax-layer layer5"></div>
+        <div class="parallax-layer layer6"></div>
+        <div class="parallax-layer layer7"></div>
+        <div class="parallax-layer layer8"></div>
+        <div class="parallax-layer layer9"></div>
+        <div class="parallax-layer layer10"></div>
+        <div class="parallax-cover">
+            <div class="parallax-contents active-1">
+                <div class="parallax-contents mt-100">
+                    <div class="vidio-box">
+                        <video autoplay loop playsinline muted width="867" height="426" controls
+                            style="padding-top: 10px;">
+                            <source src="img/mp4/doyo.mp4" type="video/mp4">
+                            이 브라우저는 지원되지 않는 기능입니다.
+                            Your browser does not support the video tag.
+                        </video>
+                        <img src="img/frame/iphone12-j.png">
+                    </div>
+                </div>
+                <div class="p1 parallax-flex">
+                    <h1>자기계발의 첫 걸음, <br>'잘했도요'와 함께하세요.</h1>
+                    <div class="btn-wrap">
+                        <a href="https://www.apple.com/kr/app-store/" target="_blank" class="btn-style">
+                            <img src="icon/applekorea.png" height="24" width="24" class="p-button__left">
+                            App Store
+                        </a>
+                        <a href="https://play.google.com/store/games?device=phone&hl=ko-KR" target="_blank"
+                            class="btn-style">
+                            <img src="icon/googleplay.png" height="24" width="24" class="p-button__left">
+                            Google Play
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="parallax-contents p1 mt-100 active-2">
+                <p>
+                    이곳은 노력하는 이들의 소중한 공간이에요.<br>
+                    잘했도요와 함께라면 당신의 일상이 새로워질 거예요.
+                </p>
+            </div>
+            <div class="parallax-contents photo mt-100 active-3">
+                <div class="phone-box">
+                    <img class="phone-content" src="img/frame/challenges.png" alt="callendar-in">
+                    <img class="phone-content" src="img/frame/iphone12-v-m.png" alt="iPhone-frame">
+                </div>
+                <p class="text-box">
+                    나에게 필요한
+                    습관으로
+                    도전하세요.
+                </p>
+            </div>
+            <div class="parallax-contents photo flex-box mt-100 active-4">
+                <img class="phone-content-2" src="img/frame/callendar.png" alt="callendar-in">
+                <img class="phone-content-2" src="img/frame/iphone12-v-m.png" alt="iPhone-frame">
+                <div>
+                    <p class="text-box-2">
+                        한 눈에<br>
+                        진행중인<br>
+                        챌린지 정보를<br>
+                        확인하세요.
+                    </p>
+                </div>
+            </div>
+            <div class="parallax-contents text-box-3 mt-100">
+                <h1><span style="color: #ff9933;">도전,</span><br>누구나 할 수 있도록</h1>
+            </div>
+            <div class="parallax-contents photo active-3">
+                <div class="phone-box ">
+                    <img class="phone-content-m" src="img/frame/main.png" alt="callendar-in">
+                    <img class="phone-content-m z-index" src="img/frame/iphone12-v-m.png" alt="iPhone-frame">
+                </div>
+                <div class="row-box-container">
+                    <div class="row-box-item">
+                        <div><img src="icon/top100.png"></div>
+                        <div><img src="icon/top100.png"></div>
+                        <div><img src="icon/top100.png"></div>
+                        <div><img src="icon/top100.png"></div>
+                        <div><img src="icon/top100.png"></div>
+                    </div>
+                </div>
+                <div class="flex-box-2">
+                    <p>작은 습관이<br>큰 성공을<br>이끈답니다</p>
+                    <p>쉬운 도전부터<br>큰 결심이<br> 필요한 도전까지</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 스크롤 옵션 (배수)
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                var scrollY = $(this).scrollTop();
 
+                // 각 레이어에 대한 비율 설정
+                var ratios = [1, 0.99, 0.97, 0.9, 0.8, 0.7, 0.6, 0.4, 0.2, 0.01];
 
+                // 각 레이어에 대한 이동 설정
+                $('.parallax-layer').each(function (index) {
+                    var translateY = scrollY * ratios[index];
+                    $(this).css({
+                        'transform': 'translateY(' + translateY + 'px)'
+                    });
+                });
+            });
+        });
+    </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+    <script>
+        // 스크롤 값 확인
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                // 현재 스크롤 위치를 콘솔에 출력
+                var scrollValue = $(this).scrollTop();
+                console.log(scrollValue);
+            });
+        });
+    </script>
 </body>
 
 </html>
