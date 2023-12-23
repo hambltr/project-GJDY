@@ -2,3 +2,299 @@
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
 @import url(./Normalize.css);
+
+body {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    display: inline-flex;
+}
+
+div {
+    word-break: keep-all;
+}
+
+a img {
+    margin: 0 6px 0 0;
+}
+
+.z-index {
+    z-index: 99;
+}
+
+
+
+.btn-style {
+    margin-right: 4px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    padding: 11px 22px;
+    border-radius: 7px;
+    border: 1px solid white;
+}
+
+.btn-style:hover {
+    background: rgba(72, 72, 72, 0.7);
+    transition: 0.2s ease, color 0.1s ease;
+}
+
+.parallax-container {
+    width: 1024px;
+    height: 1024px;
+    overflow-y: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.parallax-container h1 {
+    position: relative;
+    top:0;
+
+}
+
+.parallax-layer {
+    position: absolute;
+    width: 1024px;
+    height: 1024px;
+}
+
+.parallax-cover {
+    margin-left: auto;
+    margin-right: auto;
+    background: #0D1730;
+    display: block;
+    position: absolute;
+    width: 1024px;
+    margin-top: 1024px;
+    left: 0;
+    right: 0;
+    height: 5000px;
+    z-index: 9999999;
+}
+
+.parallax-contents {
+    width: 95%;
+    font-family: "NanumSquare", "sans-serifArial", Helvetica, sans-serif;
+    border-radius: 5px;
+    border: 1px solid white;
+    color: white;
+    padding: 10px;
+    margin: 30px auto;
+}
+
+
+
+.animation {
+    animation: 1s ease-in-out 0s 1 normal ani-50;
+}
+
+@keyframes ani-50 {
+    0% {
+        opacity: 0%;
+        transform: translate3d(0px, 50px, 0px);
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+
+.btn-wrap {
+    padding-bottom: 10px;
+}
+
+.p1 {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.p1 h1 {
+    font-size: 66px;
+    padding: 30px;
+    margin: auto;
+}
+
+.p1 p {
+    margin: 0;
+    padding: 30px;
+    font-size: 32px;
+}
+
+.mt-100 {
+    margin-top: 100px;
+}
+
+.parallax-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+.photo {
+    height: 760px;
+    position: relative;
+    background-color: RGBA(13, 23, 48, 0.1);
+}
+
+.phone-box {
+    width: 600px;
+}
+
+.phone-content {
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.phone-content-2 {
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.phone-content-m {
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 25%;
+}
+
+.text-box {
+    width: 50%;
+    position: absolute;
+    top: 45%;
+    right: 0;
+    font-size: 65px;
+    text-align: start;
+}
+
+.text-box-2 {
+    width: 50%;
+    position: absolute;
+    top: 35%;
+    left: 0;
+    font-size: 65px;
+    text-align: end;
+}
+
+.text-box-3 {
+    border: 1px solid white;
+    font-size: 36px;
+    text-align: left;
+    padding-left: 30px;
+    margin-bottom: 0;
+}
+
+.text-box-3 h1 {
+    margin-bottom: 0;
+}
+
+.flex-box {
+    display: flex;
+}
+
+.flex-box-2 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 32px;
+    padding: 0 30px 0;
+}
+
+.row-box-item {
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+    top: 370px;
+}
+
+.row-box-item img {
+    height: 150px;
+    margin-left: 16px;
+}
+
+/* 노을 배경 */
+.layer1 {
+    background-image: url('img/parallax/layer/layer01.png');
+}
+
+/* 구름 */
+.layer2 {
+    background-image: url('img/parallax/layer/layer02.png');
+}
+
+/* 해 */
+.layer3 {
+    background-image: url('img/parallax/layer/layer03.png');
+}
+
+/* 노을진 뒷산 */
+.layer4 {
+    background-image: url('img/parallax/layer/layer04.png');
+}
+
+/* 앞산 + 배경 */
+.layer5 {
+    background-image: url('img/parallax/layer/layer05.png');
+}
+
+/* 맨 뒷숲 (작은숲) */
+.layer6 {
+    background-image: url('img/parallax/layer/layer06.png');
+}
+
+/* 중간숲 */
+.layer7 {
+    background-image: url('img/parallax/layer/layer07.png');
+}
+
+/* 맨 앞숲 */
+.layer8 {
+    background-image: url('img/parallax/layer/layer08.png');
+}
+
+/* 앞 나무 */
+.layer9 {
+    background-image: url('img/parallax/layer/layer09.png');
+}
+
+/* 바위 + 사람 */
+.layer10 {
+    background-image: url('img/parallax/layer/layer10.png');
+}
+
+
+/* 비디오 컨트롤 제어권 제거 */
+video::-webkit-media-controls {
+    display: none !important;
+}
+
+.vidio-box {
+    width: 877px;
+    height: 434px;
+    position: relative;
+    overflow: hidden;
+}
+
+.vidio-box img {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+
