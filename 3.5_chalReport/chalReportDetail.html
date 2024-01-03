@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="참 잘했어요! 잘했도요.">
+    <meta name="keywords" content="도전,챌린지,도전모임,결심,목표,동기부여,노력,새해목표,올해목표,새해맞이">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/confetti.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumHarABeoJiEuiNaNum.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="chalReportDetail.css">
+
+    <title>챌린지 리포트 상세</title>
+    <link rel="icon" href="../icon/favicon.ico">
+</head>
+
+<body>
+    <section class="view">
+        <!-- <div id="header"></div> -->
+        <section>
+            <div class="contents-wrap">
+
+                <div class="chal-ReportDetail">
+
+                    <div class="report-detail">
+                        <div class="report-title">
+                            <span>
+                                <h3>물 50잔 마시기</h3>
+                                <h4>평일 매일</h4>
+                                <h5>23.12.21(목) ~ 23.12.31(일)</h5>
+                                <h6>100% 달성</h6>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="report-history">
+                        <div class="history-title"><h1>내 인증 모아보기</h1></div>
+                        <div class="history-pic">
+                            <div onclick="showChalPhoto()"><img src="./profile_3.png"></div>
+                            <div><img src="./profile_2.png"></div>
+                            <div><img src=""></div>
+                            <div><img src=""></div>
+                            <div><img src=""></div>
+                            <div><img src=""></div>
+                            <div><img src=""></div>
+                            <div><img src=""></div>
+                            <div><img src=""></div>
+                            <div><img src=""></div>
+                            <div><img src=""></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ChalPhotodetail" class="hide layer">
+                    <div class="picture-detail">
+                        <img src="./profile_3.png">
+                        <div class="picture-title">YYYY-MM-DD<button onclick="closeChalPhoto()">닫기</button></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            $("#header").load("./header.html");
+        });
+
+
+        //이미지 레이어 팝업
+        function showChalPhoto() {
+            document.querySelector('#ChalPhotodetail').classList.remove('hide');
+        }
+
+        function closeChalPhoto() {
+            document.querySelector('#ChalPhotodetail').classList.add('hide');
+        }
+
+        $(document).mouseup(function (e) {
+
+            var popContent = $('#ChalPhotodetail');
+
+            if (popContent.has(e.target).length === 0) {
+                popContent.addClass('hide');
+
+            }
+        });
+
+    </script>
+</body>
+
+</html>

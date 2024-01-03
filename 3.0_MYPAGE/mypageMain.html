@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="참 잘했어요! 잘했도요.">
+    <meta name="keywords" content="도전,챌린지,도전모임,결심,목표,동기부여,노력,새해목표,올해목표,새해맞이">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/confetti.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumHarABeoJiEuiNaNum.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="mypageMain.css">
+
+    <title>MyPAGE</title>
+    <link rel="icon" href="../icon/favicon.ico">
+</head>
+
+<body>
+    <section class="view">
+        <!-- <div id="header"></div> -->
+
+        <section>
+            <div class="contents-wrap">
+                <div class="mypage-info">
+                    <div class="mypage-profile">
+                        <div id="img-circle"><img src="./profile_2.png"></div>
+                        <div class="mypage-username">김도요새<i class="bi bi-gear-fill" onclick="Settingpage()"></i></div>
+                    </div>
+
+                    <div class="flex-box">
+                        <div class="flex-text">MY 챌린지🏃🏻‍♂️</div>
+                        <div class="info-chal">
+                            <div class="chal-box">
+                                <div id="chal-count">0</div>진행중
+                            </div>
+                            <div class="vert-line"></div>
+                            <div class="chal-box" onclick="chalReport()">
+                                <div>
+                                    <div id="chal-count">0</div>완료
+                                </div>
+                            </div>
+                            <div class="vert-line"></div>
+                            <div class="chal-box" onclick="chalManagerMain()">
+                                <div id="chal-count">0</div>개설
+                            </div>
+                        </div>
+                        <div class="info-money">
+                            <div>💸예치금:0원</div>
+                            <div>💰도요코인:0원&nbsp;</div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="info-menu">
+                        <div class="info-menubox">
+                            <h3 onclick="chalReport()"><i class="bi bi bi-journal-check"></i>챌린지 리포트</h3></i>
+                        </div>
+
+                        <div class="info-menubox">
+                            <h3 onclick="chalManagerMain()"><i class="bi bi-pencil"></i>MY 챌린지 관리</h3></i>
+                        </div>
+
+                        <div class="info-menubox">
+                            <h3><i class="bi bi-shop"></i>기프티콘 교환</h3></i>
+                        </div>
+
+                        <div class="info-menubox">
+                            <h3 onclick="claendarMain()"><i class="bi bi-calendar-check"></i>캘린더</h3></i>
+                        </div>
+
+                        <div class="info-menubox">
+                            <h3 onclick="FAQmain()"><i class="bi bi-question-circle"></i>문의하기</h3></i>
+                        </div>
+
+                        <div class="info-menubox">
+                            <h3 onclick="noticeMain()"><i class="bi bi-megaphone"></i>공지사항</h3></i>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+        });
+
+        function Settingpage() {
+            window.location.href = 'Setting.html';
+        }
+
+        function chalReport() {
+            window.location.href = '../3.5.chalReport/chalReportMain.html';
+        }
+
+        function chalManagerMain() {
+            window.location.href = '../3.7_chalManager/chalManagerMain.html';
+        }
+
+        function claendarMain() {
+            window.location.href = '../2.7_Calendar/Calendar.html';
+        }
+
+        function FAQmain() {
+            window.location.href = '../4.3_FAQ/FAQ.html';
+        }
+
+        function noticeMain(){
+            window.location.href = '../4.2_notice/noticeMain.html'
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="참 잘했어요! 잘했도요.">
+    <meta name="keywords" content="도전,챌린지,도전모임,결심,목표,동기부여,노력,새해목표,올해목표,새해맞이">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/confetti.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumHarABeoJiEuiNaNum.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="chalReportMain.css">
+
+    <title>챌린지 리포트</title>
+    <link rel="icon" href="../icon/favicon.ico">
+</head>
+
+<body>
+    <section class="view">
+        <div id="header"></div>
+        <section>
+            <div class="contents-wrap">
+
+                <div id="chalGraphs" class="chal-report page active">
+                    <div class="report-nav">
+                        <button onclick="showPage('chalGraphs')" style="border-bottom: 2px solid #ff9933;">월별
+                            그래프</button>
+                        <button onclick="showPage('chalReport')">역대 챌린지</button>
+                    </div>
+                    <div class="report-monthly">
+                        <div class="monthly-title">완료한 챌린지 개수<span id="totalChallenges">0</span></div>
+                        <ul id="monthlyGraphs"></ul>
+                    </div>
+                </div>
+
+                <div id="chalReport" class="page reportAll">
+                    <div class="report-nav">
+                        <button onclick="showPage('chalGraphs')">월별 그래프</button>
+                        <button onclick="showPage('chalReport')" style="border-bottom: 2px solid #ff9933;">역대
+                            챌린지</button>
+                    </div>
+                    <div class="report-preview" onclick="chalReportDetail()">
+                        <img src="./profile_1.png">
+                        <span>
+                            <h3>물 500잔 마시기</h3>
+                            <h4>평일 매일</h4>
+                            <h5>23.12.21(목) ~ 23.12.31(일)</h5>
+                            <h6>100% 달성</h6>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+        </section>
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            $("#header").load("./header.html");
+        });
+
+        //버튼 간 전환
+        function showPage(pageId) {
+            // 현재 활성화된 페이지 비활성화
+            var currentPage = document.querySelector('.active');
+            currentPage.classList.remove('active');
+            // 선택한 페이지 활성화
+            var selectedPage = document.getElementById(pageId);
+            selectedPage.classList.add('active');
+        }
+
+
+        //역대 챌린지 상세로 이동
+        function chalReportDetail() {
+            window.location.href = 'chalReportDetail.html';
+        }
+
+
+        //그래프 영역
+        const challengeData = [0, 1, 3, 7, 5, 29, 4, 6, 8, 9, 10, 3];
+
+        // 초기화 함수
+        function initializeGraph() {
+            const monthlyGraphs = document.getElementById('monthlyGraphs');
+            const totalChallenges = document.getElementById('totalChallenges');
+
+            // 기존 그래프 초기화
+            monthlyGraphs.innerHTML = '';
+
+            // 데이터 개수만큼 그래프 생성
+            challengeData.forEach((count, index) => {
+                const li = document.createElement('li');
+                const spanMonth = document.createElement('span');
+                const divGraph = document.createElement('div');
+                const spanCount = document.createElement('span');
+
+                spanMonth.textContent = `${index + 1}월`;
+                spanCount.textContent = count;
+
+                divGraph.classList.add('report-graph');
+                divGraph.style.width = `${Math.max(5, count * 15)}px`; // 최소 너비 5px, 최대 너비 30px
+
+                li.appendChild(spanMonth);
+                li.appendChild(divGraph);
+                li.appendChild(spanCount);
+                monthlyGraphs.appendChild(li);
+            });
+
+            // 전체 챌린지 개수 업데이트
+            const total = challengeData.reduce((acc, val) => acc + val, 0);
+            totalChallenges.textContent = total;
+        }
+
+        // 초기화 함수 호출
+        initializeGraph();
+    </script>
+</body>
+
+</html>

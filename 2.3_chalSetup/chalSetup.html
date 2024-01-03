@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="참 잘했어요! 잘했도요.">
+    <meta name="keywords" content="도전,챌린지,도전모임,결심,목표,동기부여,노력,새해목표,올해목표,새해맞이">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/confetti.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumHarABeoJiEuiNaNum.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="chalSetup.css">
+
+    <title>챌린지 개설하기</title>
+    <link rel="icon" href="../icon/favicon.ico">
+</head>
+
+<body>
+    <section class="view">
+        <!-- <div id="header"></div> -->
+        <section>
+            <div class="contents-wrap">
+
+                <div class="chalSetupTutorial page active" id="chalSetupTutorial">
+                    <h3>챌린지를 여는 이 순간부터,<br>당신은 챌린지를 이끌어나갈<br>'리더'가 됩니다. 😄</h3>
+                    <h5>그 전에 3가지만 약속해 주세요!</h5>
+
+                    <div class="checkBox_wrap">
+                        <input type="checkbox" id="ckBox1">
+                        <label for="ckBox1">모두에게 기분 좋은 챌린지가 되도록 노력해주실거죠?</label>
+                    </div>
+
+                    <div class="checkBox_wrap">
+                        <input type="checkbox" id="ckBox2">
+                        <label for="ckBox2">참가자들의 의지와 예치금이 모일 챌린지입니다.<br>
+                            책임감 있게 관리해주실거죠?</label>
+                    </div>
+
+                    <div class="checkBox_wrap">
+                        <input type="checkbox" id="ckBox3">
+                        <label for="ckBox3">유저가 개설한 챌린지의 인증샷은 잘했도요에서<br>
+                            관여하지 않습니다. 챌린지를 개설한 리더가 책임감을<br>
+                            가지고 공정하게 검토해 주세요!</label>
+                    </div>
+
+
+                    <button id="submitButton" onclick="showPage('chalsetup')" disabled>네, 약속할게요.</button>
+                </div>
+
+                <div class="chalsetup page" id="chalsetup">
+
+                    <div class="setup-cate">
+                        <h3>카테고리 선택 <span>*</span></h3>
+                        <div class="cate-select">
+                            <div class="cate-scroll">
+                                <input type="radio" name="setup-cate" id="cate1"><label for="cate1">분류1</label>
+                                <input type="radio" name="setup-cate" id="cate2"><label for="cate2">분류2</label>
+                                <input type="radio" name="setup-cate" id="cate3"><label for="cate3">분류3</label>
+                                <input type="radio" name="setup-cate" id="cate4"><label for="cate4">분류4</label>
+                                <input type="radio" name="setup-cate" id="cate5"><label for="cate5">분류5</label>
+                                <input type="radio" name="setup-cate" id="cate6"><label for="cate6">분류6</label>
+                                <input type="radio" name="setup-cate" id="cate7"><label for="cate7">분류7</label>
+                                <input type="radio" name="setup-cate" id="cate8"><label for="cate8">분류8</label>
+                                <input type="radio" name="setup-cate" id="cate9"><label for="cate9">분류9</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="setup-title">
+
+                        <h3 style="margin:7px 0px;">챌린지 제목 <span>*</span></h3>
+
+                        <input type="radio" id="chal-public" name="chal-class" checked="checked">
+                        <label for="chal-public">공개 챌린지&nbsp;</label>
+                        <input type="radio" id="chal-private" name="chal-class">
+                        <label for="chal-private">비공개 챌린지</label>
+                        <br>
+
+                        <input type="text" placeholder="챌린지 명을 입력하세요." maxlength="20"
+                            oninput="handleInput(this, 'chaltitleCount')" required>
+                        <p><span id="chaltitleCount">0</span>/20</p>
+                    </div>
+
+                    <!-- display:none -->
+                    <div class="private-code" id="private-code" style="display: none;">
+                        <h3>참여 코드 <span>*</span></h3>
+                        <h5>숫자와 문자 모두 입력할 수 있습니다.</h5>
+                        <input type="text" maxlength="10" placeholder="냥냥펀치, 1234"
+                            oninput="handleInput(this, 'privatecodecount')">
+                        <p><span id="privatecodecount">0</span>/10</p>
+                    </div>
+
+                    <div class="setup-photo">
+                        <div>
+                            <h3>대표 사진</h3>
+                            <h6>썸네일은 내 챌린지의 얼굴!<br>
+                                챌린지를 설명할 수 있는 이미지를 업로드해 주세요.</h6>
+                            <p>(확장자: jpg, png /1:1 비율 권장)</p>
+                        </div>
+
+                        <div class="Thumbnail-photo">
+                            <div id="thumbnail_container1"></div>
+                            <label for="photoupload1">📸 사진 업로드</label>
+                            <input type="file" id="photoupload1" accept="image/*" class="photoupload"
+                                onchange="setThumbnail('photoupload1');" style="display: none;">
+                        </div>
+                    </div>
+
+                    <div class="setup-weeks">
+                        <h3>챌린지 기간 <span>*</span></h3>
+                        <input type="text" class="flatpickr" id="flatpickr3" placeholder="클릭하여 기간 설정">
+
+                        <div>
+                            간편 선택:
+                            <input type="radio" id="everyday" name="chalday">
+                            <label for="everyday">매일&nbsp;</label>
+                            <input type="radio" id="weekday" name="chalday">
+                            <label for="weekday">평일&nbsp;</label>
+                            <input type="radio" id="weekend" name="chalday">
+                            <label for="weekend">주말</label>
+                            <br>
+                        </div>
+                        직접 선택:
+                        <input type="checkbox" class="weekd" id="mon">
+                        <label for="mon">월</label>
+                        <input type="checkbox" class="weekd" id="tue">
+                        <label for="tue">화</label>
+                        <input type="checkbox" class="weekd" id="wed">
+                        <label for="wed">수</label>
+                        <input type="checkbox" class="weekd" id="thu">
+                        <label for="thu">목</label>
+                        <input type="checkbox" class="weekd" id="fri">
+                        <label for="fri">금</label>
+                        <input type="checkbox" class="weeke" id="sat">
+                        <label for="sat">토</label>
+                        <input type="checkbox" class="weeke" id="sun">
+                        <label for="sun">일</label>
+                    </div>
+
+                    <div class="setup-confirm">
+                        <label for="approval-message">
+                            <h3>인증 방법 <span>*</span></h3>
+                        </label>
+                        <textarea id="approval-message" name="approval-message" rows="6" maxlength="100"
+                            placeholder="예시) 만보기를 찍어서 업로드해 주세요, 오늘 하루 배운 내용을 간략하게 정리해 주세요."
+                            oninput="handleInput(this, 'approvalcount')" required></textarea>
+                        <p><span id="approvalcount">0</span>/100</p>
+                        <h3>인증샷 예시 <span>*</span></h3>
+
+                        <div class="approval-flex">
+                            <div class="approval-photo">
+                                <div id="thumbnail_container2"></div>
+                                <label for="photoupload2">⭕이렇게 인증해 주세요!</label>
+                                <input type="file" id="photoupload2" accept="image/*" class="photoupload"
+                                    onchange="setThumbnail('photoupload2');" style="display: none;">
+                            </div>
+
+                            <div class="approval-photo">
+                                <div id="thumbnail_container3"></div>
+                                <label for="photoupload3">❌이렇게 찍으면 안돼요!</label>
+                                <input type="file" id="photoupload3" accept="image/*" class="photoupload"
+                                    onchange="setThumbnail('photoupload3');" style="display: none;">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="setup-bank">
+                        <h3>예치금 <span>*</span>
+                            <input type="checkbox" id="bankfixed">
+                            <label for="bankfixed" style="font-size:16px">고정 예치금</label>
+                        </h3>
+                        <input type="text" id="moneyset" placeholder="최소 1만원 ~ 최대 20만원 (만원 단위 입력 가능)">
+
+                        <!-- 고정 예치금 체크시 -->
+                        <input type="text" id="moneyfixed" style="display: none;"
+                            placeholder="최소 1,000원부터 설정할 수 있어요. (1,000원 단위)">
+                    </div>
+
+
+                    <div class="setup-people-limit">
+                        <div class="setup-people">
+                            <h3 style="margin:0px; padding:0px;">최대 참가 인원 제한하기</h3>
+                            <label for="toggle" class="toggleSwitch" id="people-limit">
+                                <span class="toggleButton"></span>
+                            </label>
+                        </div>
+                        <!-- 인원 제한시 -->
+                        <input type="text" id="limit-form" maxlength="4" style="display: none; margin-top:10px;"
+                            placeholder="최소 2명부터 최대 1,000명부터 설정할 수 있어요.">
+                    </div>
+
+
+
+                    <div class="keyword-input">
+                        <div class="setup-keyword">
+                            <div class="keyword-toggle">
+                                <h3>검색 키워드 입력&nbsp;<span style="color:#bbb; font-size:18px;">최대 3개</span></h3>
+                                <label for="toggle" class="toggleSwitch" id="chal-keyword">
+                                    <span class="toggleButton"></span>
+                                </label>
+                            </div>
+
+                            <h5>내 챌린지를 표현하는 단어를 추가해 보세요!<br>
+                                (검색 키워드로 활용됩니다.)</h5>
+
+                            <input type="text" id="keyword-form" style="display: none;"
+                                placeholder="쉼표로 구분하며 스페이스바 및 특수문자 사용이 불가합니다.">
+                        </div>
+                    </div>
+
+                    <div class="setup-agree">
+                        <input type="checkbox" id="chalagree">
+                        <label for="chalagree">챌린지 개설 약관에 동의합니다.</label>
+                    </div>
+                    <div class="setupsubmit">
+                        <button id="setupsubmit" disabled>개설하기</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </section>x`
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            $("#header").load("../0.1_INTRO/header.html");
+        });
+
+        //3가지 약속
+        document.addEventListener('DOMContentLoaded', function () {
+            let ckBox1 = document.getElementById('ckBox1');
+            let ckBox2 = document.getElementById('ckBox2');
+            let ckBox3 = document.getElementById('ckBox3');
+            let setupsubmit = document.getElementById('submitButton');
+
+            function updateButtonState() {
+                // 모든 체크박스가 선택되었을 때만 버튼을 활성화
+                setupsubmit.disabled = !(ckBox1.checked && ckBox2.checked && ckBox3.checked);
+            }
+
+            // 체크박스 상태 변화 감지
+            ckBox1.addEventListener('change', updateButtonState);
+            ckBox2.addEventListener('change', updateButtonState);
+            ckBox3.addEventListener('change', updateButtonState);
+        });
+
+
+        // 화면 전환 함수
+        function showPage(pageId) {
+            var currentPage = $(".active");
+            currentPage.removeClass("active");
+
+            var nextPage = $("#" + pageId);
+            nextPage.addClass("active");
+        }
+
+    </script>
+
+    <script>
+        //챌린지 개설하기 메인화면 스크립트
+
+        //글자 수 제한 처리
+        function handleInput(inputElement, charCountId) {
+            var inputText = inputElement.value;
+            var charCount = 0;
+
+            for (var i = 0; i < inputText.length; i++) {
+                if (/[\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F]/.test(inputText[i])) {
+                    charCount += 1;
+                } else {
+                    charCount += inputText[i].length;
+                }
+            }
+
+            var maxLength = parseInt(inputElement.getAttribute('maxlength'));
+            if (charCount > maxLength) {
+                inputElement.value = inputText.slice(0, -1);
+                charCount = maxLength;
+            }
+
+            document.getElementById(charCountId).innerText = charCount;
+        }
+
+        // 챌린지 공개여부
+        document.getElementById('chal-private').addEventListener('click', function () {
+            document.getElementById('private-code').style.display = 'inline-block';
+        });
+
+        // 공개 챌린지 선택 시
+        document.getElementById('chal-public').addEventListener('click', function () {
+            document.getElementById('private-code').style.display = 'none';
+        });
+
+        // 이미지 업로드
+        function setThumbnail(inputId) {
+            var imageContainer = document.querySelector("#thumbnail_container" + inputId.substr(-1));
+            imageContainer.innerHTML = "";
+
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                var img = document.createElement("img");
+                img.setAttribute("src", event.target.result);
+                imageContainer.appendChild(img);
+            };
+            reader.readAsDataURL(document.getElementById(inputId).files[0]);
+        }
+
+        //flatpickr 캘린더 라이브러리 옵션
+        document.addEventListener('DOMContentLoaded', function () {
+            var flatpickr3 = flatpickr("#flatpickr3", {
+                locale: 'ko',
+                mode: 'range',
+                locale: 'ko',
+                dateFormat: 'Y-m-d',
+                minDate: 'today',
+                maxDate: new Date().fp_incr(365),
+                altInput: true,
+                altFormat: 'Y년 F j일'
+            });
+        });
+
+        // 토글 버튼 온오프
+        const toggleList = document.querySelectorAll(".toggleSwitch");
+
+        toggleList.forEach(($toggle) => {
+            $toggle.onclick = () => {
+                $toggle.classList.toggle('active');
+            }
+        });
+
+
+        // 예치금 변경
+        document.getElementById('bankfixed').addEventListener('change', function () {
+            if (this.checked) {
+                // 체크박스가 선택된 경우
+                document.getElementById('moneyset').style.display = 'none';
+                document.getElementById('moneyfixed').style.display = 'inline-block';
+            } else {
+                // 체크박스가 선택되지 않은 경우
+                document.getElementById('moneyfixed').style.display = 'none';
+                document.getElementById('moneyset').style.display = 'inline-block';
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // 최대인원
+            let peopleLimitButton = document.getElementById('people-limit');
+            let peopleLimitForm = document.getElementById('limit-form');
+
+            peopleLimitButton.addEventListener('click', function () {
+                // 화면 토글
+                if (peopleLimitForm.style.display === 'none') {
+                    peopleLimitForm.style.display = 'block';
+                } else {
+                    peopleLimitForm.style.display = 'none';
+                }
+            });
+
+            // 검색 키워드
+            let keywordButton = document.getElementById('chal-keyword');
+            let keywordForm = document.getElementById('keyword-form');
+
+            keywordButton.addEventListener('click', function () {
+                // 화면 토글
+                if (keywordForm.style.display === 'none') {
+                    keywordForm.style.display = 'block';
+                } else {
+                    keywordForm.style.display = 'none';
+                }
+            });
+        });
+
+
+        //약관 동의 체크 여부
+        document.addEventListener('DOMContentLoaded', function () {
+            let chalagree = document.getElementById('chalagree');
+            let setupsubmit = document.getElementById('setupsubmit');
+
+            // 체크박스 상태 변화 감지
+            chalagree.addEventListener('change', function () {
+                // 버튼 활성화/비활성화
+                setupsubmit.disabled = !chalagree.checked;
+            });
+        });
+
+
+        // 라디오 선택 값 마다 체크박스 변화
+        document.addEventListener('DOMContentLoaded', function () {
+            const everyday = document.querySelector('#everyday');
+            const weekday = document.querySelector('#weekday');
+            const weekend = document.querySelector('#weekend');
+            const weekdCheckboxes = document.querySelectorAll('.weekd');
+            const weekeCheckboxes = document.querySelectorAll('.weeke');
+
+            everyday.addEventListener('click', function () {
+                const isChecked = everyday.checked;
+
+                for (const checkbox of weekdCheckboxes) {
+                    checkbox.checked = isChecked;
+                }
+
+                for (const checkbox of weekeCheckboxes) {
+                    checkbox.checked = isChecked;
+                }
+
+                everyday.checked = isChecked;
+                weekday.checked = false;  // 평일 라디오버튼 선택 해제
+                weekend.checked = false;  // 주말 라디오버튼 선택 해제
+            });
+
+            weekday.addEventListener('click', function () {
+                const isChecked = weekday.checked;
+
+                for (const checkbox of weekdCheckboxes) {
+                    checkbox.checked = isChecked;
+                }
+
+                for (const checkbox of weekeCheckboxes) {
+                    checkbox.checked = false;
+                }
+
+                everyday.checked = false;
+                weekend.checked = false;
+            });
+
+            weekend.addEventListener('click', function () {
+                const isChecked = weekend.checked;
+
+                for (const checkbox of weekdCheckboxes) {
+                    checkbox.checked = false;
+                }
+
+                for (const checkbox of weekeCheckboxes) {
+                    checkbox.checked = isChecked;
+                }
+
+                everyday.checked = false;
+                weekday.checked = false;
+            });
+        });
+    </script>
+</body>
+
+</html>
