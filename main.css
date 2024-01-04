@@ -1,0 +1,488 @@
+@charset "UTF-8";
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+/* @import url(./Normalize.css); */
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 작업 하실 때, 모든 작업물은
+contents-wrap 요소 안쪽에 넣어주시면 됩니다. */
+
+
+/* 기본 공통 요소 */
+body {
+    margin: 0 auto;
+    width: 576px;
+    height: 100vh;
+    background: #ffeedd;
+    font-family: "GmarketSansMedium", "";
+}
+
+div,
+input {
+    box-sizing: border-box;
+}
+
+.login [type="text"],
+.login [type="password"] {
+    padding-top: 13px;
+}
+
+.login [type=submit] {
+    cursor: pointer;
+    padding-top: 4px;
+}
+
+a {
+    text-decoration: none;
+    color: #2D1E16;
+}
+
+ul {
+    list-style: none;
+}
+
+.side-anchor {
+    padding-top: 20px;
+    text-decoration: none;
+    color: #2D1E16;
+    background: #ff9933;
+    padding: 15px 10px 10px;
+    border-radius: 20px;
+    border: 2px solid #2D1E16;
+    transition: all 0.2s;
+}
+
+.light:hover::after {
+    transform: translateX(50px);
+    transition: all 0.5s;
+}
+
+.light {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    z-index: 1;
+    /* 부모 요소의 z-index 설정 */
+}
+
+.light::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-75deg, transparent 63%, rgba(255, 255, 255, 0.5) 63%, rgba(255, 255, 255, 0.5) 71%, transparent 72%),
+        linear-gradient(-75deg, transparent 53%, rgba(255, 255, 255, 0.5) 61%, rgba(255, 255, 255, 0.5) 61%, transparent 51%);
+    z-index: 2;
+    transition: all 0.5s;
+}
+
+.btn-style {
+    margin-right: 4px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    border-radius: 7px;
+    border: 1px solid white;
+}
+
+.btn-style:hover {
+    background: rgba(72, 72, 72, 0.7);
+    transition: 0.2s ease, color 0.1s ease;
+}
+
+/* 유저가 사용하는 영역입니다. */
+.view {
+    background: #fff;
+}
+
+/* 숨겨진 어플깔아무새. 
+width가 1200미만일 땐, 숨겨져 있습니다. */
+.nav-side {
+    display: none;
+}
+
+/* 잘했도요 상단 - 배치 */
+.nav-top {
+    position: fixed;
+    top: 0;
+    width: 576px;
+    background: #ff9933;
+    text-align: center;
+    font-family: 'NanumHarABeoJiEuiNaNum';
+    font-size: 3rem;
+    z-index: 99999;
+}
+
+/* 잘했도요 상단 - 크기 */
+.nav-top div {
+    width: 576px;
+    height: 85px;
+}
+
+/* 잘했도요 상단 - 로고 img */
+.nav-top img {
+    height: 65px;
+}
+
+/* nav 하단바 - 위치 */
+.nav-bottom {
+    font-family: "GmarketSansMedium";
+    position: fixed;
+    bottom: 0;
+    z-index: 99999;
+}
+
+/* nav 하단바 - 크기 */
+.nav-bottom ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 576px;
+    height: 90px;
+    background-color: #eeecec;
+    font-size: 0.8rem;
+    margin: auto;
+    padding: 0px;
+}
+
+/* nav 하단바 - 버튼 */
+.nav-bottom li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80px;
+    width: 100px;
+    margin: auto;
+    color: #2D1E16;
+    cursor: pointer;
+}
+
+
+/* nav 하단바 i태그 그림 - 크기 */
+.nav-bottom i {
+    font-size: 2.5rem;
+}
+
+/* nav 하단바 - hover */
+.nav-bottom li:hover {
+    color: #FF9933;
+    transition: all 0.3s;
+}
+
+
+/* 버튼 요소 공통 */
+/* button {
+    background-color: #ff9933;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40px;
+    margin: 10px 0;
+}
+
+button:hover {
+    background: #2D1E16;
+    transition: all 0.5s;
+}
+
+/* 기본적인 버튼 */
+/* .btn-basic {
+    width: 15%;
+} */
+
+/* 긴 버튼 */
+/* .btn-long {
+    width: 90%;
+}  */
+
+/* 탭 요소의 크기 및 배치 */
+.tab {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 576px;
+    height: 50px;
+    background-color: #FFFFFF;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+
+/* 탭 */
+.tab-title {
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 550px;
+    margin: auto;
+    cursor: pointer;
+}
+
+/* 탭 선택시 효과 (JS제어) */
+.tab-selected {
+    border-bottom: 2px solid #FF9933;
+}
+
+/* 소제목 타이틀 */
+/* .title {
+    display: flex;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #2D1E16;
+    margin-bottom: 10px;
+} */
+
+/* 소제목 span 요소 폰트  */
+/* .title span {
+    font-size: 2rem;
+    padding: 10px;
+} */
+
+/* 컨텐츠 표시 영역 */
+.contents-wrap {
+    width: 576px;
+    min-height: 100vh;
+    padding-top: 88px;
+    padding-bottom: 98px;
+    overflow: hidden;
+    margin: auto;
+}
+
+/* input {
+    width: 90%;
+    height: 40px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+input:focus {
+    border-color: #FF9933;
+    outline: none;
+} */
+
+.slide-box {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.slide-box img {
+    width: 100%;
+    height: 460px;
+}
+
+.c-window {
+    width: 576px;
+    height: 460px;
+    margin: 0 auto;
+    margin-top: -3px;
+    overflow: hidden;
+    z-index: 1;
+    margin: -3px 0 3px;
+}
+
+.slide-container {
+    width: 300vw;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide-box {
+    width: 576px;
+    float: left;
+}
+
+.vertical-box {
+    border-bottom: 1.5px solid #2D1E16;
+    width: 100%;
+    height: 30px;
+    margin: 0 0 5px auto;
+    text-align: start;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    flex-direction: row;
+}
+
+.vertical-box p {
+    margin: 3px 10px 0;
+}
+
+.show-more {
+    color: #ccc;
+}
+
+.show-more:hover {
+    color: #ff9933;
+    transition: all 0.3s;
+}
+
+.flex-sp-bt {
+    justify-content: space-between;
+}
+
+.main-chall-wrap {
+    margin: 10px;
+    width: 1024px;
+    height: 225px;
+    display: grid;
+    overflow-x: auto;
+    /* 가로 스크롤 활성화 */
+    overflow-y: hidden;
+    /* 세로 스크롤 제거 */
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+}
+
+.main-chall-wrap p {
+    margin: 0;
+    overflow-x: auto;
+}
+
+.main-chall-item {
+    box-sizing: border-box;
+    text-align: center;
+    margin: var(--space-0);
+    padding: var(--space-0);
+    margin: 0 10px 0;
+    height: 222px;
+    width: 150px;
+    cursor: pointer;
+}
+
+.main-chall-item p,
+.main-chall-item h5 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    text-align: left;
+    margin: 0;
+}
+
+.main-chall-item h5 {
+    margin-top: 10px;
+}
+
+.main-chall-item img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.draggable-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    height: 230px;
+    display: flex;
+}
+
+/* 가로 스크롤바 제거 */
+.main-chall-wrap {
+    overflow-x: auto;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    transition: scroll-left 0.5s ease-in-out;
+}
+
+/* Chrome, Safari, Opera */
+.main-chall-wrap::-webkit-scrollbar {
+    display: none;
+}
+
+.ft-ul-dp-flex {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.ft-ul-dp-flex li {
+    margin: 5px 10px 0;
+}
+
+.ft-ul-dp-flex a:hover {
+    cursor: pointer;
+    color: #ff9933;
+    transition: all 0.3s;
+}
+
+.ft-thorn {
+    width: 1px;
+    height: 20px;
+    background-color: gray;
+}
+
+.site-info {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    text-align: center;
+    background: #eeecec;
+}
+
+.site-info p {
+    margin: 5px 0;
+}
+
+
+
+
+/* width가 1200px 이상일 때 적용되는 요소 
+   미디어쿼리는 항상 css 최하단에 위치시켜주세요!! */
+@media screen and (min-width : 1200px) {
+
+    /* 컨텐츠 우측으로 밀기 */
+    body {
+        margin: 0;
+        position: relative;
+        left: 50%;
+    }
+
+    /* 좌측에 앱 다운로드 유도창 띄우기 */
+    .nav-side {
+        width: 375px;
+        font-family: "GmarketSansMedium";
+        position: fixed;
+        top: 30%;
+        left: 15%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-side h1 {
+        font-size: 2.5rem;
+    }
+
+    .nav-side p {
+        font-size: 1.5rem;
+    }
+
+    .btn-style {
+        display: inline-block;
+    }
+}
+
+/* 모바일 화면에서 nav-side를 숨김
+화면이 1200px 이상일 때 적용되는 요소*/
+@media screen and (max-width: 576px) {
+    .nav-side {
+        display: none;
+    }
+}

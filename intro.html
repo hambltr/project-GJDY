@@ -64,13 +64,13 @@
                     </div>
                 </div>
             </div>
-            <div class="parallax-contents p1 mt-100 active-2">
+            <div class="parallax-contents p1 mt-100">
                 <p>
                     이곳은 노력하는 이들의 소중한 공간이에요.<br>
                     잘했도요와 함께라면 당신의 일상이 새로워질 거예요.
                 </p>
             </div>
-            <div class="parallax-contents photo mt-100 active-3">
+            <div class="parallax-contents photo mt-100">
                 <div class="phone-box">
                     <img class="phone-content" src="img/frame/challenges.png" alt="callendar-in">
                     <img class="phone-content" src="img/frame/iphone12-v-m.png" alt="iPhone-frame">
@@ -81,7 +81,7 @@
                     도전하세요.
                 </p>
             </div>
-            <div class="parallax-contents photo flex-box mt-100 active-4">
+            <div class="parallax-contents photo flex-box mt-100">
                 <img class="phone-content-2" src="img/frame/callendar.png" alt="callendar-in">
                 <img class="phone-content-2" src="img/frame/iphone12-v-m.png" alt="iPhone-frame">
                 <div>
@@ -93,30 +93,90 @@
                     </p>
                 </div>
             </div>
+            <div class="parallax-contents flex-box-2 mt-100">
+                <div><img src="img/gold_safe.jpg" width="500px" style="border: 2px solid white"></div>
+                <div id="fade-text">
+                    <p>달성하면, <span style="color: #ff9933;">상금,</span></p>
+                    <p>실패하면, <span style="color: #ffb871;">벌금,</span></p>
+                    <p>동기부여, <span style="color: #ffe5cc;">지금.</span></p>
+                </div>
+                <div></div>
+            </div>
+            <div class="parallax-contents mt-100 p1">
+                <p>목표달성에 도움이 되는 예치금을 걸 수 있어요.<br>
+                    성공하면 추가 상금을 받고,<br>실패하면 벌금을 지불하는 시스템을 통해<br>
+                    목표달성의 성취감을 느껴보세요.</p>
+            </div>
             <div class="parallax-contents text-box-3 mt-100">
                 <h1><span style="color: #ff9933;">도전,</span><br>누구나 할 수 있도록</h1>
             </div>
-            <div class="parallax-contents photo active-3">
-                <div class="phone-box ">
+            <div class="parallax-contents photo mt-100">
+                <div class="phone-box">
                     <img class="phone-content-m" src="img/frame/main.png" alt="callendar-in">
-                    <img class="phone-content-m z-index" src="img/frame/iphone12-v-m.png" alt="iPhone-frame">
+                    <img class="phone-content-m" src="img/frame/iphone12-v-m.png" alt="iPhone-frame">
                 </div>
                 <div class="row-box-container">
                     <div class="row-box-item">
-                        <div><img src="icon/top100.png"></div>
-                        <div><img src="icon/top100.png"></div>
-                        <div><img src="icon/top100.png"></div>
-                        <div><img src="icon/top100.png"></div>
-                        <div><img src="icon/top100.png"></div>
+                        <div class="fadeElement-side"><img src="icon/top100.png"></div>
+                        <div class="fadeElement-middle"><img src="icon/top100.png"></div>
+                        <div class="fadeElement-center"><img src="icon/top100.png"></div>
+                        <div class="fadeElement-middle"><img src="icon/top100.png"></div>
+                        <div class="fadeElement-side"><img src="icon/top100.png"></div>
                     </div>
                 </div>
                 <div class="flex-box-2">
-                    <p>작은 습관이<br>큰 성공을<br>이끈답니다</p>
-                    <p>쉬운 도전부터<br>큰 결심이<br> 필요한 도전까지</p>
+                    <p style="padding-left: 20px;">쉬운 도전부터<br>어려운<br>도전까지</p>
+                    <p style="padding-right: 40px;">작은 습관이<br>큰 성공을<br>이끕니다</p>
                 </div>
+            </div>
+            <div class="parallax-contents p1 mt-100">
+                <p>잘했도요는 모든 목표와 꿈을 응원하며,<br>함께 성장하는 공간입니다.<br>
+                    같은 목표를 가진 사람들과 더 나은 자신으로 성장해보세요!</p>
+            </div>
+            <div class="btn-wrap">
+                <a href="main.html" target="_blank" class="btn-style" style="font-size: 38px;">
+                    도전하러 가기
+                </a>    
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function () {
+            var scrollThreshold = 5800;
+            var endIntro = $("#modal-intro");
+
+            $(window).scroll(function () {
+                var scrollPosition = $(this).scrollTop();
+
+                if (scrollPosition >= scrollThreshold) {
+                    endIntro.css("opacity", 1);
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            var paragraphs = $("#fade-text p");
+
+            function showNextParagraph(index) {
+                if (index < paragraphs.length) {
+                    paragraphs.eq(index).css("opacity", 1);
+                    setTimeout(function () {
+                        showNextParagraph(index + 1);
+                    }, 700);
+                }
+            }
+
+            // 스크롤 이벤트를 이용하여 특정 위치에 도달하면 함수 호출
+            $(window).scroll(function () {
+                var scrollPosition = $(this).scrollTop();
+
+                // 특정 스크롤 위치에 도달하면 함수 호출
+                if (scrollPosition >= 3800) {
+                    showNextParagraph(0);
+                }
+            });
+        });
+    </script>
     <script>
         // 스크롤 옵션 (배수)
         $(document).ready(function () {
@@ -136,7 +196,69 @@
             });
         });
     </script>
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                // 현재 스크롤 위치를 가져옵니다.
+                var scrollPosition = $(window).scrollTop();
 
+                // 원하는 스크롤 위치 x, y를 설정합니다.
+                var x = 5150;
+                var y = 5300;
+
+                // 1차 함수를 사용하여 opacity를 계산합니다.
+                var opacityValue = (scrollPosition - x) / (y - x);
+
+                // 최소값과 최대값을 설정하여 opacity가 음수가 되거나 1보다 커지는 것을 방지합니다.
+                opacityValue = Math.min(1, Math.max(0, opacityValue));
+
+                // 실제로 opacity를 변경합니다.
+                $(".fadeElement-side").css("opacity", opacityValue);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                // 현재 스크롤 위치를 가져옵니다.
+                var scrollPosition2 = $(window).scrollTop();
+
+                // 원하는 스크롤 위치 x, y를 설정합니다.
+                var x = 5050;
+                var y = 5200;
+
+                // 1차 함수를 사용하여 opacity를 계산합니다.
+                var opacityValue = (scrollPosition2 - x) / (y - x);
+
+                // 최소값과 최대값을 설정하여 opacity가 음수가 되거나 1보다 커지는 것을 방지합니다.
+                opacityValue = Math.min(1, Math.max(0, opacityValue));
+
+                // 실제로 opacity를 변경합니다.
+                $(".fadeElement-middle").css("opacity", opacityValue);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                // 현재 스크롤 위치를 가져옵니다.
+                var scrollPosition2 = $(window).scrollTop();
+
+                // 원하는 스크롤 위치 x, y를 설정합니다.
+                var x = 4950;
+                var y = 5100;
+
+                // 1차 함수를 사용하여 opacity를 계산합니다.
+                var opacityValue = (scrollPosition2 - x) / (y - x);
+
+                // 최소값과 최대값을 설정하여 opacity가 음수가 되거나 1보다 커지는 것을 방지합니다.
+                opacityValue = Math.min(1, Math.max(0, opacityValue));
+
+                // 실제로 opacity를 변경합니다.
+                $(".fadeElement-center").css("opacity", opacityValue);
+            });
+        });
+    </script>
     <script>
         // 스크롤 값 확인
         $(document).ready(function () {
