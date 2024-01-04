@@ -47,7 +47,7 @@
           </div>
 
           <div class="join-chal">
-            <h3>📌참여중인 챌린지</h3>
+            <h3 onclick="verifyList()">📌참여중인 챌린지</h3>
             <ul class="hyphen">
               <li>
                 <a href="#">물 500잔 마시기&nbsp;<i class="bi bi-arrow-up-right-square"></i></a>
@@ -105,6 +105,10 @@
     $(function () {
       $("#header").load("header.html");
     });
+
+    function verifyList(){
+            window.location.href = '2.4_verify-list.html';
+        }
 
     let today = new Date();
     let nowMonth = new Date();
