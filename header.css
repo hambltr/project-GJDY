@@ -86,25 +86,30 @@ a {
 }
 
 .share-box {
-    float: right;
     display: none;
+    height: 82px;
 }
 
-.share-box::after {
-    clear: both;
+.share-inner-box {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 50px;
+    position: relative;
+    top: 104px;
 }
 
-.share-box img {
+.share-inner-box img {
     width: 50px;
     height: 50px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 #bd {
     border: 1px solid black;
 }
 
-.share-box div {
+.share-inner-box div {
     cursor: pointer;
     align-items: center;
     width: 70px;

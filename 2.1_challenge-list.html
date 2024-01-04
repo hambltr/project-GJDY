@@ -26,70 +26,70 @@
 
 <body>
     <section class="view">
-            <div id="header"></div>
-            <div class="contents-wrap">
-                <div class="filter-list">
-                    <div class="f-list1 tab-selected">인기</div>
-                    <div class="f-list2">추천</div>
-                    <div class="f-list3">신규</div>
+        <div id="header"></div>
+        <div class="contents-wrap">
+            <div class="filter-list">
+                <div class="f-list1 tab-selected">인기</div>
+                <div class="f-list2">추천</div>
+                <div class="f-list3">신규</div>
+            </div>
+            <div class="filter-sub-list">
+                <div class="f-s-list1 tab-selected">전체</div>
+                <div class="f-s-list2">운동</div>
+                <div class="f-s-list3">식습관</div>
+                <div class="f-s-list4">생활</div>
+                <div class="f-s-list5">정서</div>
+                <div class="f-s-list6">취미</div>
+                <div class="f-s-list7">환경</div>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search" name="search" placeholder="검색어를 입력하세요.">
+                <button>검색</button>
+            </div>
+            <div class="challenge-container">
+                <div class="challenge-grid-item">
+                    <a href="#">
+                        <img src="img/drowing.jpg">
+                        <h5>드로잉/크로키 연습</h5>
+                        <p>그림을 그립시다.</p>
+                    </a>
                 </div>
-                <div class="filter-sub-list">
-                    <div class="f-s-list1 tab-selected">전체</div>
-                    <div class="f-s-list2">운동</div>
-                    <div class="f-s-list3">식습관</div>
-                    <div class="f-s-list4">생활</div>
-                    <div class="f-s-list5">정서</div>
-                    <div class="f-s-list6">취미</div>
-                    <div class="f-s-list7">환경</div>
+                <div class="challenge-grid-item">
+                    <a href="#">
+                        <img src="img/coding_1.jpg">
+                        <h5>코딩하기</h5>
+                        <p>코딩합시다.</p>
+                    </a>
                 </div>
-                <div class="search-bar">
-                    <input type="text" id="search" name="search" placeholder="검색어를 입력하세요.">
-                    <button>검색</button>
+                <div class="challenge-grid-item">
+                    <a href="#">
+                        <img src="img/cycle.jpg">
+                        <h5>자전거 꿈나무 모여라</h5>
+                        <p>가보자고~</p>
+                    </a>
                 </div>
-                <div class="challenge-container">
-                    <div class="challenge-grid-item">
-                        <a href="#">
-                            <img src="img/drowing.jpg">
-                            <h5>드로잉/크로키 연습</h5>
-                            <p>그림을 그립시다.</p>
-                        </a>
-                    </div>
-                    <div class="challenge-grid-item">
-                        <a href="#">
-                            <img src="img/coding_1.jpg">
-                            <h5>코딩하기</h5>
-                            <p>코딩합시다.</p>
-                        </a>
-                    </div>
-                    <div class="challenge-grid-item">
-                        <a href="#">
-                            <img src="img/cycle.jpg">
-                            <h5>자라니 꿈나무 모여라</h5>
-                            <p>가보자고~</p>
-                        </a>
-                    </div>
-                    <div class="challenge-grid-item">
-                        <a href="#">
-                            <img src="img/running.jpg">
-                            <h5>달리기</h5>
-                            <p>발에 불붙었어요!!</p>
-                        </a>
-                    </div>
+                <div class="challenge-grid-item">
+                    <a href="#">
+                        <img src="img/running.jpg">
+                        <h5>달리기</h5>
+                        <p>발에 불붙었어요!!</p>
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
     </section>
     <script>
-        
-    $(function () {
-      $("#header").load("header.html");
-    });
+
+        $(function () {
+            $("#header").load("header.html");
+        });
 
         // Ex) 서버에서 받아온 기프티콘 데이터 배열
         var challengeData = [
             { imgSrc: 'img/coding_1.jpg', name: '코딩하기', comment: '코딩합시다.' },
             { imgSrc: 'img/drowing.jpg', name: '드로잉/크로키 연습', comment: '그림을 그립시다.' },
-            { imgSrc: 'img/cycle.jpg', name: '자라니 꿈나무 모여라', comment: '가보자고~' },
+            { imgSrc: 'img/cycle.jpg', name: '자전거 꿈나무 모여라', comment: '가보자고~' },
             { imgSrc: 'img/coding_2.jpg', name: '코딩하기', comment: '코딩이 재밌어요?' }
         ];
 

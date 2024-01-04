@@ -27,45 +27,45 @@
 <body>
     <section class="view">
         <div id="header"></div>
-            <div class="bottom-btn">
-                <ul>
-                    <div class="buy-btn">
-                        <p>참여하기</p>
-                    </div>
-                </ul>
-            </div>
-            <div class="contents-wrap">
-                <div class="thum-wrap">
-                    <img src="img/drowing.jpg">
-                    <div class="thum-over">
-                        <h1>드로잉/크로키 연습</h1>
-                        <input type="text" id="date-range" readonly placeholder="날짜를 선택해주세요.">
-                        <h2>참여비: 0원</h2>
-                    </div>
+        <div class="bottom-btn">
+            <ul>
+                <div class="buy-btn">
+                    <p>참여하기</p>
                 </div>
-                <div class="challenge-detail-info">
-                    <h1>이렇게 인증해주세요!</h1>
-                    <div class="challenge-inner-detail-info">
-                        <div>
-                            <img src="img/goodjob_cat.png">
-                            <div id="ch-inner-box-ok">O</div>
-                            <p>본인이 그린 그림을 올려주세요.</p>
-                        </div>
-                        <div>
-                            <img src="img/dodoyoyo.jpg">
-                            <div id="ch-inner-box-no">X</div>
-                            <p>남의 그림 도용은 안 돼요.</p>
-                        </div>
-                    </div>
+            </ul>
+        </div>
+        <div class="contents-wrap">
+            <div class="thum-wrap">
+                <img src="img/drowing.jpg">
+                <div class="thum-over">
+                    <h1>드로잉/크로키 연습</h1>
+                    <input type="text" id="date-range" readonly placeholder="날짜를 선택해주세요.">
+                    <h2>참여비: 0원</h2>
                 </div>
             </div>
-        </section>
+            <div class="challenge-detail-info">
+                <h1>이렇게 인증해주세요!</h1>
+                <div class="challenge-inner-detail-info">
+                    <div>
+                        <img src="img/goodjob_cat.png">
+                        <div id="ch-inner-box-ok">O</div>
+                        <p>본인이 그린 그림을 올려주세요.</p>
+                    </div>
+                    <div>
+                        <img src="img/dodoyoyo.jpg">
+                        <div id="ch-inner-box-no">X</div>
+                        <p>남의 그림 도용은 안 돼요.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     </section>
     <script>
-            $(function () {
-      $("#header").load("header.html");
-    });
-    
+        $(function () {
+            $("#header").load("header.html");
+        });
+
         $(document).ready(function () {
             // datepicker를 적용하여 범위를 선택할 수 있는 input을 만듭니다.
             $("#date-range").datepicker({
@@ -88,6 +88,14 @@
             });
         });
     </script>
+    <script>
+        $(document).ready(function () {
+            $('.buy-btn').on('click', function () {
+                window.location.href = '2.2.1_challenge-main-detail.html';
+            });
+        });
+    </script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

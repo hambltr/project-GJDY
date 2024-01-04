@@ -38,14 +38,14 @@
                         <div class="verify-grid-item">
                             <a href="#">
                                 <img src="img/cycle.jpg">
-                                <h5>자라니 꿈나무 모여라</h5>
+                                <h5>자전거 꿈나무 모여라</h5>
                                 <p>가보자고~</p>
                             </a>
                         </div>
                         <div class="verify-grid-item">
-                            <a href="#">
-                                <img src="img/coding_1.jpg">
-                                <h5>코딩하기</h5>
+                            <a href="2.4.1_challenge-verification.html">
+                                <img src="img/drowing.jpg">
+                                <h5>드로잉/크로키 연습</h5>
                                 <p>코딩합시다.</p>
                             </a>
                         </div>
@@ -67,50 +67,53 @@
                 </div>
                 <div class="verify-history-wrap" style="display: none;">
                     <div class="verify-history">
-                        <div class="verify-history-title">
-                            <img src="img/pet_cat.png">
-                            <h2>고양이 500번 쓰다듬기</h2>
+                        <a href="2.4.2_challenge-verifiy-info.html">
+                            <div class="verify-history-title">
+                                <img src="img/drowing.jpg">
+                                <h2>드로잉/크로키 연습</h2>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="verify-history-check">
+                        <div>
+                            <p>월</p>
                         </div>
-                        <div class="verify-history-check">
-                            <div>
-                                <p>월</p>
-                            </div>
-                            <div>
-                                <p>화</p>
-                            </div>
-                            <div>
-                                <p>수</p>
-                            </div>
-                            <div>
-                                <p>목</p>
-                            </div>
-                            <div>
-                                <p>금</p>
-                            </div>
-                            <div>
-                                <p>토</p>
-                            </div>
-                            <div>
-                                <p>일</p>
-                            </div>
+                        <div>
+                            <p>화</p>
+                        </div>
+                        <div>
+                            <p>수</p>
+                        </div>
+                        <div>
+                            <p>목</p>
+                        </div>
+                        <div>
+                            <p>금</p>
+                        </div>
+                        <div>
+                            <p>토</p>
+                        </div>
+                        <div>
+                            <p>일</p>
                         </div>
                     </div>
                 </div>
             </div>
+            </div>
         </section>
     </section>
     <script>
-            $(function () {
-      $("#header").load("header.html");
-    });
+        $(function () {
+            $("#header").load("header.html");
+        });
 
 
         // 서버에서 받아온 데이터 배열
         var challengeUserData = [
-            { imgSrc: 'img/coding_1.jpg', name: '코딩하기', comment: '코딩합시다.' },
+            { imgSrc: 'img/running.jpg', name: '2km 달리기', comment: '발에 불날때까지' },
             { imgSrc: 'img/drowing.jpg', name: '드로잉/크로키 연습', comment: '그림을 그립시다.' },
-            { imgSrc: 'img/cycle.jpg', name: '자라니 꿈나무 모여라', comment: '가보자고~' },
-            { imgSrc: 'img/coding_2.jpg', name: '코딩하기', comment: '이딴게 재밌어요?' }
+            { imgSrc: 'img/cycle.jpg', name: '자전거 꿈나무 모여라', comment: '가보자고~' },
+            { imgSrc: 'img/coding_2.jpg', name: '코딩하기', comment: '이런게 재밌어요?' }
         ];
 
         var loadCount = 0; // 로드된 횟수 초기화
@@ -121,7 +124,7 @@
             var documentHeight = $(document).height();
 
             // 스크롤 위치의 오차를 늘립니다. (문서 하단 0.95배 지점까지 스크롤 하면, 새로 로드)
-            if (scrollPosition >= 0.95 * documentHeight - windowHeight && loadCount < 4) {
+            if (scrollPosition >= 0.95 * documentHeight - windowHeight && loadCount < 3) {
                 console.log('챌린지 페이지가 로드되었습니다.');
                 for (var i = 0; i < challengeUserData.length; i++) {
                     var htmlContent = `<div class="verify-grid-item">
