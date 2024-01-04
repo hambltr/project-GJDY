@@ -71,7 +71,7 @@
                     <div class="navRight">
                         <i class="bi bi-share" id="share"></i>
                         <i class="bi bi-box-arrow-in-right" onclick="signin()"></i>
-                        <i class="bi bi-plus-square" id="square"></i>
+                        <i class="bi bi-plus-square" id="square" onclick="challengeSetup()"></i></i>
                     </div>
                 </div>
 
@@ -112,6 +112,10 @@
                 crossorigin="anonymous"></script>
 
             <script>
+
+                function challengeSetup(){
+                    window.location.href = '2.3_chalSetup.html'
+                }
 
                 function signin() { //MY페이지
                     window.location.href = 'login.html';

@@ -43,7 +43,7 @@
                     <div class="flex-box">
                         <div class="flex-text">MY 챌린지🏃🏻‍♂️</div>
                         <div class="info-chal">
-                            <div class="chal-box">
+                            <div class="chal-box" onclick="verifyList()">
                                 <div id="chal-count">0</div>진행중
                             </div>
                             <div class="vert-line"></div>
@@ -58,8 +58,8 @@
                             </div>
                         </div>
                         <div class="info-money">
-                            <div>💸예치금:0원</div>
-                            <div>💰도요코인:0원&nbsp;</div>
+                            <div onclick="deposit()">💸예치금:0원</div>
+                            <div onclick="doyocoin()">💰도요코인:0원&nbsp;</div>
                         </div>
                     </div>
 
@@ -110,6 +110,10 @@
             window.location.href = '3.2_Setting.html';
         }
 
+        function verifyList(){
+            window.location.href = '2.4_verify-list.html';
+        }
+
         function chalReport() {
             window.location.href = '3.5_chalReportMain.html';
         }
@@ -132,6 +136,14 @@
 
         function gifticonMain(){
             window.location.href = '3.4_gifticon.html'
+        }
+
+        function deposit(){
+            window.location.href = '3.3_deposit.html'
+        }
+
+        function doyocoin(){
+            window.location.href = '3.3.1_doyocoin.html'
         }
         
 

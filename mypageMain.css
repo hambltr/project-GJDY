@@ -182,6 +182,10 @@ input {
   margin-top: 10px;
 }
 
+.info-money div{
+  cursor: pointer;
+}
+
 /* 가운데 주황색 선 */
 .mypage-info hr {
   border: 10px solid #ff9933;
