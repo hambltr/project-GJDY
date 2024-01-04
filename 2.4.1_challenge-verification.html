@@ -31,39 +31,39 @@
         <div class="bottom-btn">
             <ul>
                 <div class="buy-btn">
-                    <p>참여하기</p>
+                    <p>인증하기</p>
                 </div>
             </ul>
         </div>
-            <div class="contents-wrap">
-                <div class="challenge-charge">
-                    <div class="ch-th-info">
-                        <img src="img/drowing.jpg">
-                        <div>
-                            <h1>드로잉/크로키 연습</h1>
-                            <h2>참여비: 0원</h2>
-                            <h6>24-01-05 ~ 24-01-15</h6>
-                        </div>
+        <div class="contents-wrap">
+            <div class="challenge-charge">
+                <div class="ch-th-info">
+                    <img src="img/drowing.jpg">
+                    <div>
+                        <h1>드로잉/크로키 연습</h1>
+                        <h2>참여비: 0원</h2>
+                        <h6>24-01-05 ~ 24-01-15</h6>
                     </div>
-                    <div class="up-verify-wrap">
-                        <div class="file-up">
-                            <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*"
-                                onchange="previewImage()">
-                        </div>
-                        <div id="imagePreview">
-                            <img src="img/clip.jpg" width="300px" height="auto">
-                            <p>최대 한 장만 업로드 가능합니다.</p>
-                        </div>
+                </div>
+                <div class="up-verify-wrap">
+                    <div class="file-up">
+                        <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*"
+                            onchange="previewImage()">
+                    </div>
+                    <div id="imagePreview">
+                        <img src="img/clip.jpg" width="300px" height="auto">
+                        <p>최대 한 장만 업로드 가능합니다.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
     </section>
     <script>
-            $(function () {
-      $("#header").load("header.html");
-    });
-    
+        $(function () {
+            $("#header").load("header.html");
+        });
+
         $(document).ready(function () {
             $('#fileToUpload').on('change', function () {
                 var fileInput = $(this);
@@ -85,6 +85,13 @@
                     };
                     reader.readAsDataURL(file);
                 }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.buy-btn').on('click', function () {
+                window.location.href = '2.4.2_challenge-verifiy-info.html';
             });
         });
     </script>

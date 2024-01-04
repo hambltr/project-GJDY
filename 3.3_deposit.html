@@ -2,20 +2,21 @@
 <html lang="ko">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="참 잘했어요! 잘했도요.">
-  <meta name="keywords" content="도전,챌린지,도전모임,결심,목표,동기부여,노력,새해목표,올해목표,새해맞이">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-  <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumHarABeoJiEuiNaNum.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="deposit.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="참 잘했어요! 잘했도요.">
+    <meta name="keywords" content="도전,챌린지,도전모임,결심,목표,동기부여,노력,새해목표,올해목표,새해맞이">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumHarABeoJiEuiNaNum.css" rel="stylesheet">
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="deposit.css">
 
-  <title>잘했도요</title>
-  <link rel="icon" href="icon/favicon.ico">
+    <title>잘했도요</title>
+    <link rel="icon" href="icon/favicon.ico">
 </head>
 
 <body>
@@ -30,7 +31,7 @@
     </div>
     <div class="contents-wrap">
       <div class="exit-btn">
-        <a href="#">
+        <a href="3.1_mypageMain.html">
           <i class="bi bi-x-lg"></i>
         </a>
       </div>
@@ -52,62 +53,62 @@
     $(function () {
       $("#header").load("header.html");
     });
+    
+        // input 창 천의 자리마다 포맷팅 적용 (ex-> 1,000원)
+        $(document).ready(function () {
+            $('#deposit').mask('#,##0', { reverse: true });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#deposit').on('blur', function () {
+                var inputVal = $(this).val().replace(/,/g, '');
+                if (inputVal !== '') {
+                    var rounded = Math.floor(parseInt(inputVal) / 1000) * 1000;
+                    $(this).val(rounded).trigger('input');
+                    $('#message').html('충전하실 금액은 ' + rounded.toLocaleString() + '원입니다. 1,000원 단위로 충전할 수 있습니다.');
+                } else {
+                    $('#message').html('');
+                }
 
-    // input 창 천의 자리마다 포맷팅 적용 (ex-> 1,000원)
-    $(document).ready(function () {
-      $('#deposit').mask('#,##0', { reverse: true });
-    });
-  </script>
-  <script>
-    $(document).ready(function () {
-      $('#deposit').on('blur', function () {
-        var inputVal = $(this).val().replace(/,/g, '');
-        if (inputVal !== '') {
-          var rounded = Math.floor(parseInt(inputVal) / 1000) * 1000;
-          $(this).val(rounded).trigger('input');
-          $('#message').html('충전하실 금액은 ' + rounded.toLocaleString() + '원입니다. 1,000원 단위로 충전할 수 있습니다.');
-        } else {
-          $('#message').html('');
-        }
+                if (inputVal % 1000 == 0) {
+                    $(this).val(rounded).trigger('input');
+                    $('#message').html('충전하실 금액은 ' + rounded.toLocaleString() + '원입니다.');
+                }
 
-        if (inputVal % 1000 == 0) {
-          $(this).val(rounded).trigger('input');
-          $('#message').html('충전하실 금액은 ' + rounded.toLocaleString() + '원입니다.');
-        }
+            }).mask('#,##0', { reverse: true });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            // 예치금 데이터를 서버에서 받아온다고 가정
+            var depositAmount = 0; // 서버에서 받아온 데이터로 대체
 
-      }).mask('#,##0', { reverse: true });
-    });
-  </script>
-  <script>
-    $(document).ready(function () {
-      // 예치금 데이터를 서버에서 받아온다고 가정
-      var depositAmount = 0; // 서버에서 받아온 데이터로 대체
+            // 받아온 데이터로 HTML 업데이트
+            updateDepositAmount(depositAmount);
 
-      // 받아온 데이터로 HTML 업데이트
-      updateDepositAmount(depositAmount);
+            // 예치금 데이터 업데이트 함수
+            function updateDepositAmount(amount) {
+                var formattedAmount = amount.toLocaleString(); // 숫자를 통화 형식으로 포맷팅
+                $('#depositAmount').text(formattedAmount + ' 원');
+            }
 
-      // 예치금 데이터 업데이트 함수
-      function updateDepositAmount(amount) {
-        var formattedAmount = amount.toLocaleString(); // 숫자를 통화 형식으로 포맷팅
-        $('#depositAmount').text(formattedAmount + ' 원');
-      }
-
-      // 예치금 충전하기 버튼 클릭 시
-      $('#chargeButton').on('click', function () {
-        // 충전할 금액을 서버로 전송하는 로직 등 추가 가능
-        var chargeAmount = $('#deposit').val();
-        // 서버에서 충전 후에 받아온 예치금 데이터로 HTML 업데이트
-        updateDepositAmount(chargeAmount);
-        // 메시지 업데이트
-
-        $('#message').html('충전이 완료되었습니다.');
-        alert('충전이 완료되었습니다.');
-      });
-    });
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
+            // 예치금 충전하기 버튼 클릭 시
+            $('#chargeButton').on('click', function () {
+                // 충전할 금액을 서버로 전송하는 로직 등 추가 가능
+                var chargeAmount = $('#deposit').val();
+                // 서버에서 충전 후에 받아온 예치금 데이터로 HTML 업데이트
+                updateDepositAmount(chargeAmount);
+                // 메시지 업데이트
+                
+                $('#message').html('충전이 완료되었습니다.');
+                alert('충전이 완료되었습니다.');
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
