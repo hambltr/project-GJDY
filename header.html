@@ -30,6 +30,7 @@
 </head>
 
 <body>
+
     <section class="view">
         <nav class="nav-side">
             <div style="margin-bottom: 35px;">
@@ -69,7 +70,7 @@
                     </div>
                     <div class="contents-nav navRight">
                         <i class="bi bi-share"></i>
-                        <i class="bi bi-plus-square"></i>
+                        <!-- <i class="bi bi-plus-square"></i> -->
                     </div>
                 </div>
 
@@ -131,6 +132,18 @@
                     window.history.back();
                 }
 
+                $(document).ready(function () {
+                    // 현재 페이지의 경로 확인
+                    var currentPage = window.location.pathname;
+
+                    //header요소 숨기기
+                    if (currentPage === '/3.2_Setting.html') {
+                        $('.nav-bottom').hide();
+                        $('.contents-wrap').css({
+                            'padding-bottom': '10px'
+                        });
+                    }
+                });
             </script>
 </body>
 
