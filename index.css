@@ -47,6 +47,16 @@ ul {
     list-style: none;
 }
 
+.side-anchor {
+    padding-top: 20px;
+    text-decoration: none;
+    color: #2D1E16;
+    background: #ff9933;
+    padding: 15px 10px 10px;
+    border-radius: 20px;
+    border: 2px solid #2D1E16;
+    transition: all 0.2s;
+}
 
 .light:hover::after {
     transform: translateX(50px);
@@ -214,8 +224,31 @@ input:focus {
     margin: 3px 10px 0;
 }
 
+.notice-contents-box {
+    overflow: hidden;
+    height: 30px; /* .notice-contents의 높이와 동일하게 설정 */
+}
+
+.notice-contents {
+    margin: 3px 10px 0;
+    animation: slideUp 0.5s ease-in-out;
+}
+
+.notice-contents:hover {
+    cursor: pointer;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
 .show-more {
-    color: #ccc;
+    color: #707070;
 }
 
 .show-more:hover {
