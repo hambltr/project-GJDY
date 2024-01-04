@@ -54,11 +54,7 @@
             </div>
         </nav>
         <section>
-            <div class="nav-top">
-                <div>
-                    <span>잘했<img src="icon/logo_doyo.png">도요</span>
-                </div>
-            </div>
+            <div id="header"></div>
             <div class="nav-bottom">
                 <ul>
                     <div class="buy-btn">
@@ -67,25 +63,6 @@
                 </ul>
             </div>
             <div class="contents-wrap">
-                <div class="contents-nav">
-                    <a>
-                        <i class="bi bi-arrow-left"></i>
-                    </a>
-                    <a>
-                        <i class="bi bi-share"></i>
-                    </a>
-                </div>
-                <div class="share-box">
-                    <div><img src="icon/kakaotalk_logo.png">
-                        <p>카카오톡</p>
-                    </div>
-                    <div><img src="icon/twitter_logo.png">
-                        <p>트위터</p>
-                    </div>
-                    <div><img id="bd" src="icon/URL_link.PNG">
-                        <p>링크복사</p>
-                    </div>
-                </div>
                 <div class="thum-wrap">
                     <img src="img/drowing.jpg">
                     <div class="thum-over">
@@ -112,6 +89,11 @@
         </section>
     </section>
     <script>
+        
+    $(function () {
+      $("#header").load("header.html");
+    });
+    
         $(document).ready(function () {
             // datepicker를 적용하여 범위를 선택할 수 있는 input을 만듭니다.
             $("#date-range").datepicker({

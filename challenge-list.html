@@ -54,30 +54,7 @@
             </div>
         </nav>
         <section>
-            <div class="nav-top">
-                <div>
-                    <span>잘했<img src="icon/logo_doyo.png">도요</span>
-                </div>
-            </div>
-            <div class="nav-bottom">
-                <ul>
-                    <li><i class="bi bi-calendar-check"></i>
-                        <div>캘린더</div>
-                    </li>
-                    <li><i class="bi bi-person-arms-up"></i>
-                        <div>챌린지</div>
-                    </li>
-                    <li><i class="bi bi-house-fill"></i>
-                        <div>HOME</div>
-                    </li>
-                    <li><i class="bi bi-camera-fill"></i>
-                        <div>인증</div>
-                    </li>
-                    <li><i class="bi bi-person-fill"></i>
-                        <div>MYPAGE</div>
-                    </li>
-                </ul>
-            </div>
+            <div id="header"></div>
             <div class="contents-wrap">
                 <div class="contents-nav">
                     <a>
@@ -139,6 +116,11 @@
         </section>
     </section>
     <script>
+        
+    $(function () {
+      $("#header").load("header.html");
+    });
+
         // Ex) 서버에서 받아온 기프티콘 데이터 배열
         var challengeData = [
             { imgSrc: 'img/coding_1.jpg', name: '코딩하기', comment: '코딩합시다.' },
