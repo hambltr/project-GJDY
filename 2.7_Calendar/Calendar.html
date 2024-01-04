@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="참 잘했어요! 잘했도요.">
+    <meta name="keywords" content="도전,챌린지,도전모임,결심,목표,동기부여,노력,새해목표,올해목표,새해맞이">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/confetti.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumHarABeoJiEuiNaNum.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="Calendar.css">
+
+    <title>캘린더</title>
+    <link rel="icon" href="../icon/favicon.ico">
+</head>
+
+<body>
+    <section class="view">
+        <!-- <div id="header"></div> -->
+      <div class="contents-wrap">
+
+        <div class="calendar-container">
+
+          <div class="calendar-title">
+            <div style="text-align: left;">
+              &nbsp;<strong id="year"></strong>년
+              <strong id="month"></strong>월
+            </div>
+            <div>
+              <span onclick="prevCalendar()"><i class="bi bi-chevron-left"></i></span>
+              <span onclick="nextCalendar()"><i class="bi bi-chevron-right"></i></span>
+            </div>
+          </div>
+
+          <div class="join-chal">
+            <h3>📌참여중인 챌린지</h3>
+            <ul class="hyphen">
+              <li>
+                <a href="#">물 500잔 마시기&nbsp;<i class="bi bi-arrow-up-right-square"></i></a>
+              </li>
+              <li>
+                <a href="#">물 500잔 마시기&nbsp;<i class="bi bi-arrow-up-right-square"></i></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="new_schedule">
+            <button onclick="showPopup()"><i class="bi bi-calendar-plus"></i></button>
+          </div>
+
+          <div class="cal-weeks">
+            <span style="color:#F53900">일</span>
+            <span>월</span>
+            <span>화</span>
+            <span>수</span>
+            <span>목</span>
+            <span>금</span>
+            <span style="color:#006EF5;">토</span>
+          </div>
+
+          <table id="calendar" class="calendar">
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div id="ScheduleWrite" class="hide layer">
+          <div class="schedule-write">
+
+            <input type="text" class="schedule-title" id="scheduleTitle" placeholder="일정 제목을 입력하세요." maxlength="15"
+              required><br>
+            <input type="text" class="flatpickr" id="flatpickr1" placeholder="클릭해서 날짜 및 시간 설정" required>
+            <label style="font-size:20px;" for="schedule-detail">상세 내용</label><br>
+            <textarea id="schedule-detail" maxlength="100"></textarea><br>
+
+            <span style="display: flex; justify-content: flex-end;">
+              <button onclick="saveDates()">저장</button>
+              <button onclick="closePopup()">닫기</button>
+            </span>
+
+          </div>
+        </div>
+
+      </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <script>
+    $(function () {
+      $("#header").load("./header.html");
+    });
+
+    let today = new Date();
+    let nowMonth = new Date();
+
+
+    function buildCalendar() {
+      document.getElementById("year").innerHTML = nowMonth.getFullYear();
+      document.getElementById("month").innerHTML = nowMonth.getMonth() + 1;
+
+      let firstDate = new Date(nowMonth.getFullYear(), nowMonth.getMonth(), 1);
+      let lastDate = new Date(nowMonth.getFullYear(), nowMonth.getMonth() + 1, 0);
+
+      let tbodyCalendar = document.querySelector("#calendar>tbody");
+
+      while (tbodyCalendar.rows.length > 0) {
+        tbodyCalendar.deleteRow(tbodyCalendar.rows.length - 1);
+      }
+
+      let nowRow = tbodyCalendar.insertRow();
+
+      for (let i = 0; i < firstDate.getDay(); i++) {
+        nowRow.insertCell();
+      }
+
+      for (let nowDay = firstDate; nowDay <= lastDate; nowDay.setDate(nowDay.getDate() + 1)) {
+        let nowColumn = nowRow.insertCell();
+        nowColumn.innerHTML = nowDay.getDate();
+
+        if (nowDay.getDay() == 0) {
+          nowColumn.style.color = "#F53900";
+        }
+        if (nowDay.getDay() == 6) {
+          nowColumn.style.color = "#006EF5";
+          nowRow = tbodyCalendar.insertRow();
+        }
+        if (nowDay.getFullYear() == today.getFullYear() && nowDay.getMonth() == today.getMonth() && nowDay.getDate() == today.getDate()) {
+          nowColumn.style.background = "#FF9933";
+          nowColumn.style.color = "#FFFFFF";
+          nowColumn.style.borderRadius = "0px";
+        }
+
+        if (nowDay.getDate() !== undefined && !isNaN(nowDay.getDate())) {
+          nowColumn.classList.add("has-number");
+        }
+      }
+    }
+
+    // 이전 달 버튼
+    function prevCalendar() {
+      nowMonth = new Date(nowMonth.getFullYear(), nowMonth.getMonth() - 1, nowMonth.getDate());
+      buildCalendar();
+    }
+
+    // 이후 달 버튼
+    function nextCalendar() {
+      nowMonth = new Date(nowMonth.getFullYear(), nowMonth.getMonth() + 1, nowMonth.getDate());
+      buildCalendar();
+    }
+
+    buildCalendar();
+
+
+
+    // 새 일정 만들기 
+    document.addEventListener('DOMContentLoaded', function () {
+      var commonOptions = {
+        locale: 'ko',
+        dateFormat: 'Y-m-d',
+      };
+
+      // 일정 캘린더의 시작일~종료일
+      var flatpickr1 = flatpickr("#flatpickr1", {
+        ...commonOptions,
+        enableTime: true,
+        mode: 'range',
+        dateFormat: 'Y-m-d H:i',
+        minuteIncrement: 10,
+        altInput: true,
+        altFormat: 'Y년 F j일 H:i'
+      });
+
+      // 종일 캘린더
+      var flatpickr2 = flatpickr("#flatpickr2", {
+        ...commonOptions,
+        altInput: true,
+        altFormat: 'Y년 F j일'
+      });
+
+      var flatpickr4 = flatpickr("#flatpickr4", {
+        locale: 'ko',
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+        altInput: true,
+      });
+
+
+    });
+
+    // 캘린더 생성 레이어 팝업
+    function showPopup() {  
+      document.querySelector('#ScheduleWrite').classList.remove('hide');
+    };
+
+    function closePopup() {
+      document.querySelector('#ScheduleWrite').classList.add('hide');
+    };
+
+  </script>
+</body>
+
+</html>

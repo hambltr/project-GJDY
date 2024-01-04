@@ -1,0 +1,412 @@
+@charset "UTF-8";
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+@import url(./Normalize.css);
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* reset.css가 아닌 Normalize.css로 파일 변경 
+    모든 브라우저간의 View를 통일 시켜줍니다. */
+
+
+/* 희은 추가 영역 */
+
+/* 영역 전체 내 패딩 필쑤!
+padding: 20px;
+margin:0 auto; */
+
+/* 중간타이틀
+    font-size: 35px;
+    color: #FF6600; */
+
+/* 라벨(소제목)
+    display: block;
+    font-size: 20px;
+    margin: 10px 0px; */
+
+/* 텍스트 박스
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #ddd;
+
+    :focus
+    border-bottom: 1px solid #FF9933;
+    outline: none; */
+
+/* 버튼
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    margin: 25px 0;
+    background-color: #2D1E16;
+    color: #FFFFFF;
+    
+    :hover
+    background-color: #FF9933;
+    transition: all 0.3s; */
+
+
+/* 수정 내역 끝! */
+
+
+/* 버튼의 경우 색을 조금 손봤는데
+    디폴트 값이 회색인 경우, 대체로 비활성화 된
+    인식을 주기 때문에 저희 사이트의 아이덴티티
+    색상을 사용해보았습니다. */
+
+/* moblie 화면으로 볼 때 contents-wrap 부분에 
+발작이 일어났었으나, 이는 곧 진압되었습니다. */
+
+/* 요소 검사를 하실 때 body가 왜 중앙에 있는지,
+    해당 현상은 버그입니다 놀라지 마시길 바랍니다. 
+    잡는법은 저도 모름 */
+
+/* 작업 하실 때, 모든 작업물은
+contents-wrap 요소 안쪽에 넣어주시면 됩니다. */
+
+/* 전달드리는 요소들은 모든 요소들이 
+    확정 및 정리된 것이 아닙니다.
+    필요하시다면 추가로 공유해주세요. */
+
+/* font-family: 'GmarketSansMedium'; */
+
+
+/* 기본 공통 요소 */
+body {
+    margin: 0 auto;
+    width: 576px;
+    height: 100vh;
+    background: #ffeedd;
+}
+
+div,
+input {
+    box-sizing: border-box;
+}
+
+/* 유저가 사용하는 영역입니다. */
+.view {
+    background: #fff;
+}
+
+.contents-wrap {
+    width: 576px;
+    min-height: 100vh;
+    padding-top: 88px;
+    padding-bottom: 98px;
+    overflow: hidden;
+    font-family: 'GmarketSansMedium';
+    color: #2D1E16;
+}
+
+/* flex 영역 감싸기 */
+.flex-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1;
+    justify-content: center;
+}
+
+/* ---------------------------------------------------------------- */
+
+.calendar-container {
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* 년월, 버튼 영역 */
+.calendar-title {
+    font-size: 32px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 월 이동 버튼 */
+.calendar-title div:nth-child(2) span {
+    margin: 0px 20px;
+}
+
+.calendar-title div:nth-child(2) span:hover {
+    cursor: pointer;
+}
+
+.calendar-title div:nth-child(2) span:hover {
+    color: #ff9933;
+}
+
+/* 일~토 */
+.cal-weeks {
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    padding: 10px 0px 20px;
+}
+
+/* 테이블 1칸 정의 */
+#calendar table tr,
+td {
+    width: 76px;
+    height: 76px;
+    vertical-align: top;
+    text-align: center;
+    padding: 5px 0px;
+}
+
+#calendar tbody td.has-number:hover {
+    background-color: #f7f3f3;
+    cursor: pointer;
+}
+
+/* 참여중인 챌린지 영역 */
+.join-chal {
+    width: 100%;
+    height: 110px;
+    margin: 13px 0px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0px 0px 7px #b8b8b8;
+}
+
+.join-chal h3 {
+    font-size: 22px;
+    padding: 15px 15px 5px;
+    margin: 0px;
+    color: #e60000;
+}
+
+.join-chal ul,
+li {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* 챌린지 리스트 커스텀 */
+.join-chal a {
+    text-decoration: none;
+    color: #2D1E16;
+}
+
+.join-chal a:hover {
+    text-decoration: underline;
+}
+
+/* 하이픈 커스텀 */
+.hyphen li {
+    position: relative;
+    margin: 2px 0 0 10px;
+    padding: 0px 0 2px 15px;
+    font-size: 16px;
+    color: #2D1E16;
+}
+
+.hyphen li:before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 6px;
+    width: 4px;
+    height: 1px;
+    background: #2D1E16;
+}
+
+/* 일정 생성 버튼 */
+.new_schedule {
+    display: flex;
+    justify-content: flex-end;
+    height: 1px;
+}
+
+.new_schedule button {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    top: 450px;
+    padding-top: 5px;
+    background-color: rgba(255, 214, 173, 0.5);
+    border-radius: 50%;
+    border: none;
+}
+
+.new_schedule button i {
+    color: #ff9933;
+    font-size: 35px;
+}
+
+.new_schedule button:hover {
+    background-color: rgba(255, 214, 173);
+    transition: all 0.2s;
+}
+
+.new_schedule button i:hover {
+    color: #ff7300;
+    transition: all 0.2s;
+}
+
+.new_schedule button:active {
+    color: #ff7300;
+    box-shadow: 0 0 0 5px rgba(255, 153, 51, 0.1);
+    transition: none;
+}
+
+
+/* 새 일정 만들기 영역 */
+.schedule-write {
+    font-family: 'GmarketSansMedium';
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 40px 30px 30px;
+    background-color: #FFFFFF;
+    width: 500px;
+}
+
+.schedule-title{
+    border: none;
+    border-radius: 0;
+    margin-bottom: 15px;
+    width: 100%;
+    margin:0 0 15px;
+    padding:6px 12px;
+    font-size:30px;
+    color:#ff9933;
+}
+
+.schedule-title:focus{
+    border: none;
+    outline: none;  
+}
+
+
+/* 새 일정 만들기 내 flatpickr 라이브러리 */
+.flatpickr-calendar {
+    /* left:500px !important; */
+    right:400px !important;
+}
+
+.schedule-write .flatpickr {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    margin-bottom: 15px;
+}
+
+.schedule-write .flatpickr-calendar.open {
+    z-index: 9999999;
+}
+
+.schedule-write .flatpickr:hover {
+    border: none !important;
+    border-bottom: 1px solid #ff9933 !important;
+    border-radius: 0 !important;
+    box-shadow: 0 3px 5px #FFFFFF !important;
+}
+
+.schedule-write .flatpickr:focus {
+    border-bottom: 1px solid rgb(255, 153, 51) !important;
+    border-radius: 0 !important;
+    outline: none !important;
+    box-shadow: 0 3px 5px rgba(255, 153, 51, .25) !important;
+}
+
+.schedule-write .flatpickr::after:focus {
+    box-shadow: none !important;
+}
+
+.schedule-write textarea {
+    border: 1px solid #ddd;
+    border-radius: 0;
+    margin: 0 0 15px 0;
+    width: 100%;
+    height:130px;
+    padding: 6px 12px;
+    resize:none;
+}
+
+.schedule-write label{
+    padding:6px;
+}
+
+.schedule-write textarea:focus{
+    border: 1px solid #FF9933;
+    outline: none;
+}
+
+.schedule-write button{
+    border:none;
+    padding:9px 8px 7px;
+    color:white;
+    margin-top:20px;
+}
+
+.schedule-write button:first-child{
+    background-color: #FF9933;
+}
+
+.schedule-write button:first-child:hover{
+    background-color: #ff8710;
+}
+
+.schedule-write button:last-child{
+    background-color: #ccc;
+    margin-left:15px;
+}
+
+.schedule-write button:last-child:hover{
+    background-color: #bbb;
+    margin-left:15px;
+}
+
+/* 레이어 팝업 */
+.layer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background: rgba(0, 0, 0, .7);
+    z-index: 99999;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.hide {
+    display: none;
+  }
+
+/* ---------------------------------------------------------------- */
+
+/* 화면이 1200px 이상일 때 적용되는 요소 
+   미디어쿼리는 항상 css 최하단에 위치시켜주세요!! */
+@media screen and (min-width : 1200px) {
+
+    /* 컨텐츠 우측으로 밀기 */
+    body {
+        margin: 0;
+        position: relative;
+        left: 50%;
+    }
+
+    /* 좌측에 앱 다운로드 유도창 띄우기 */
+    .nav-side {
+        width: 375px;
+        font-family: "S-Core Dream 4";
+        position: fixed;
+        top: 30%;
+        left: 15%;
+    }
+
+}

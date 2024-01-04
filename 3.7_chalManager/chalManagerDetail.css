@@ -1,0 +1,587 @@
+@charset "UTF-8";
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+@import url(./Normalize.css);
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* reset.css가 아닌 Normalize.css로 파일 변경 
+    모든 브라우저간의 View를 통일 시켜줍니다. */
+
+
+/* 희은 추가 영역 */
+
+/* 영역 전체 내 패딩 필쑤!
+padding: 20px;
+margin:0 auto; */
+
+/* 중간타이틀
+    font-size: 35px;
+    color: #FF6600; */
+
+/* 라벨(소제목)
+    display: block;
+    font-size: 20px;
+    margin: 10px 0px; */
+
+/* 텍스트 박스
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #ddd;
+
+    :focus
+    border-bottom: 1px solid #FF9933;
+    outline: none; */
+
+/* 버튼
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    margin: 25px 0;
+    background-color: #2D1E16;
+    color: #FFFFFF;
+    
+    :hover
+    background-color: #FF9933;
+    transition: all 0.3s; */
+
+
+/* 수정 내역 끝! */
+
+
+/* 버튼의 경우 색을 조금 손봤는데
+    디폴트 값이 회색인 경우, 대체로 비활성화 된
+    인식을 주기 때문에 저희 사이트의 아이덴티티
+    색상을 사용해보았습니다. */
+
+/* moblie 화면으로 볼 때 contents-wrap 부분에 
+발작이 일어났었으나, 이는 곧 진압되었습니다. */
+
+/* 요소 검사를 하실 때 body가 왜 중앙에 있는지,
+    해당 현상은 버그입니다 놀라지 마시길 바랍니다. 
+    잡는법은 저도 모름 */
+
+/* 작업 하실 때, 모든 작업물은
+contents-wrap 요소 안쪽에 넣어주시면 됩니다. */
+
+/* 전달드리는 요소들은 모든 요소들이 
+    확정 및 정리된 것이 아닙니다.
+    필요하시다면 추가로 공유해주세요. */
+
+/*    font-family: 'GmarketSansMedium'; */
+
+
+/* 기본 공통 요소 */
+body {
+    margin: 0 auto;
+    width: 576px;
+    height: 100vh;
+    background: #ffeedd;
+}
+
+div,
+input {
+    box-sizing: border-box;
+}
+
+/* 유저가 사용하는 영역입니다. */
+.view {
+    background: #fff;
+}
+
+.contents-wrap {
+    width: 576px;
+    min-height: 100vh;
+    padding-top: 88px;
+    padding-bottom: 98px;
+    overflow: hidden;
+    font-family: 'GmarketSansMedium';
+}
+
+/* flex 영역 감싸기 */
+.flex-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1;
+    justify-content: center;
+}
+
+/* ---------------------------------------------------------------- */
+.contents-wrap {
+    padding-top: 85px !important
+}
+
+/* 챌린지 1개 영역 */
+.mychal-detail {
+    position: relative;
+    width: 576px;
+    height: 576px;
+    border-top: 1px solid #a3a3a3;
+    border-bottom: 1px solid #a3a3a3;
+    background-image: url('./profile_1.png');
+    background-repeat: no-repeat;
+    background-size: 576px;
+
+}
+
+
+.mychal-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    width: 576px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.mychal-info span {
+    margin: auto 20px;
+}
+
+.mychal-info h3 {
+    margin-top: 20px;
+    font-size: 40px;
+}
+
+.mychal-info h4,
+h5 {
+    font-size: 20px;
+}
+
+.mychal-info h6 {
+    background-color: #ddd;
+    width: 90px;
+    font-size: 15px;
+    padding: 8px 4px 4px 6px;
+    margin-top: 10px;
+    margin-bottom: 18px;
+}
+
+
+/* 오늘의 참여 현황, 참가자 인증 모아보기 타이틀 */
+.mychal-titles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #ddd;
+    margin: 20px 10px 10px;
+}
+
+.mychal-titles h1 {
+    margin: 0px;
+    font-size: 28px;
+    color: #2D1E16;
+}
+
+.mychal-titles span {
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+.mychal-titles button {
+    background-color: #FFFFFF;
+    border: none;
+    font-size: 18px;
+}
+
+.mychal-titles button:hover {
+    background-color: #FFFFFF;
+    color: #FF6600;
+    transition: all 0.3s;
+}
+
+/* 인증 있없 */
+.chalconfirm {
+    font-size: 22px;
+    padding: 15px 5px 10px;
+    margin: 0 0 30px 0;
+    display: none;
+}
+
+.check {
+    background-color: rgba(255, 0, 0, 0.3);
+    border-bottom: 2px solid rgba(255, 0, 0, 0.3);
+}
+
+.finish {
+    background-color: rgba(0, 223, 67, 0.3);
+    border-bottom: 2px solid rgba(0, 223, 67, 0.3);
+}
+
+/* 참가자 인증 모아보기 */
+.user-photo {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.user-photo div {
+    background-color: #ddd;
+    width: 84px;
+    height: 84px;
+    margin: 5px;
+    border: 1px solid #ddd;
+
+}
+
+.user-photo img {
+    width: 82px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* 이미지 레이어 팝업 */
+#ChalUserdetail.hide {
+    display: none;
+}
+
+#ChalUserdetail .chaluser-detail {
+    width: 500px;
+    height: 580px;
+    margin: auto;
+    background-color: #FFFFFF;
+    border: 1px solid #ddd;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+
+.picture-title {
+    font-size: 20px;
+    margin-top: 35px;
+}
+
+.chaluser-detail img {
+    width: 460px;
+    border: 1px solid #ddd;
+}
+
+.chaluser-detail {
+    font-size: 20px;
+    margin-top: 35px;
+}
+
+.chaluser-detail button {
+    margin: 0 0 0 15px;
+    padding: 7px 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    background-color: #2D1E16;
+    color: #FFFFFF;
+}
+
+
+/* 유저 컨펌 화면 전환 후 css */
+.userconfirm-area {
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.userconfirm-area>h3:first-child {
+    font-size: 30px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0px;
+    margin:10px 0px 0px;
+}
+
+.user-confirm {
+    width: 100%;
+    padding: 25px 10px;
+    margin: 30px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 11px hsl(0, 0%, 90%);
+}
+
+
+.user-confirm:hover {
+    box-shadow: 0px 0px 11px hsl(0, 0%, 85%);
+    transition: all 0.3s;
+}
+
+.user-confirm img {
+    border: 1px solid #ddd;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.confirm-text {
+    display: flex;
+    flex-wrap: wrap;
+    width: 360px;
+}
+
+.user-confirm h3 {
+    width: 228px;
+    height: 30px;
+    font-size: 30px;
+    margin: 10px 15px;
+    padding: 5px 0px 0px 0px;
+    cursor: pointer;
+}
+
+.user-confirm h5 {
+    font-size: 18px;
+    margin: 30px 0px 32px 15px;
+    overflow: hidden;
+}
+
+.user-confirm button {
+    position: relative;
+    top: 17px;
+    border: none;
+    font-size: 25px;
+    background-color: #FFFFFF;
+}
+
+.user-confirm button:hover {
+    outline: none;
+    animation: vibration 0.7s infinite;
+}
+
+.user-confirm button:focus {
+    outline: none;
+    animation: vibration 0.7s infinite;
+}
+
+.user-confirm button:active {
+    outline: none;
+}
+
+
+
+/* 유저 인증 상세 */
+.confirm-detail {
+    background-color: #FFFFFF;
+    width: 450px;
+    height: 680px;
+    text-align: center;
+    margin: 0 auto;
+    padding:20px;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+}
+
+/* 인증 이미지 */
+.confirm-detail img {
+    width: 380px;
+    height: 380px;
+    margin:18px 0px;
+    object-fit: contain;
+    border: 1px solid #ddd;
+}
+
+.confirm-detail h3 {
+    font-size: 30px;
+    margin:0px;
+}
+
+.confirm-detail h5 {
+    text-align: left;
+    margin: 0px 20px;
+    height: 90px;
+    font-size: 16px;
+}
+
+/* btn영역 */
+.confirm-detail button {
+    border: none;
+    margin: 0px 10px;
+    padding: 8px 10px 5px;
+    width: 90px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+
+#chalaccept {
+    background-color: #2D1E16;
+}
+
+#chalaccept:hover {
+    background-color: #160f0b;
+}
+
+#chalrefuse {
+    background-color: #c7c7c7;
+}
+
+#chalrefuse:hover {
+    background-color: #b8b8b8;
+}
+
+/* 상세 영역 취소 버튼 */
+.confirm-detail #chalcancel {
+    background-color: #FFFFFF;
+    width:390px;
+    margin: 15px 0px 0px;
+    padding: 0px;
+    color:#2D1E16;
+    text-align: right;
+}
+
+.confirm-detail #chalcancel:hover {
+    background-color: #FFFFFF;
+}
+
+
+/* 유저 승인 최종, 반려 최종 */
+
+.confirm-final {
+    width: 450px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px 20px 30px;
+    border-radius: 30px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+}
+
+.confirm-final h3 {
+    margin: 15px;
+}
+
+.confirm-final h5 {
+    font-size: 14px;
+    color: red;
+    margin: 15px 0px 10px;
+}
+
+#refuse-message {
+    margin: 15px 0px 0px 0px;
+    width: 100%;
+    resize: none;
+}
+
+.confirm-final button {
+    border: none;
+    margin: 0px 10px;
+    padding: 8px 10px 5px;
+    width: 90px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+
+/* 반려 텍스트 폼 css */
+#refuse-message {
+    width: 100%;
+    padding: 10px;
+    margin: 0 0 15px;
+    box-sizing: border-box;
+    border: none;
+    border: 1px solid #ddd;
+    resize: none;
+}
+
+#refuse-message:focus {
+    border: 1px solid #FF9933;
+    outline: #D2691E;
+}
+
+/* 인증 반려 내 반려버튼 한정 */
+.confirm-final #chalrefuse {
+    background-color: #2D1E16;
+}
+
+.confirm-final #chalrefuse:hover {
+    background-color: #160f0b;
+}
+
+/* 공통 취소 버튼 */
+#chalcancel {
+    background-color: #c7c7c7;
+}
+
+#chalcancel:hover {
+    background-color: #b8b8b8;
+}
+
+
+
+/* 레이어 팝업에 대한 css */
+.layer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background: rgba(0, 0, 0, .7);
+    z-index: 99999;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.layer.hide {
+    display: none;
+}
+
+/* 화면 전환 css */
+.page {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+
+
+/* ---------------------------------------------------------------- */
+
+/* 화면이 1200px 이상일 때 적용되는 요소 
+   미디어쿼리는 항상 css 최하단에 위치시켜주세요!! */
+@media screen and (min-width : 1200px) {
+
+    /* 컨텐츠 우측으로 밀기 */
+    body {
+        margin: 0;
+        position: relative;
+        left: 50%;
+    }
+
+    /* 좌측에 앱 다운로드 유도창 띄우기 */
+    .nav-side {
+        width: 375px;
+        font-family: 'GmarketSansMedium';
+        position: fixed;
+        top: 30%;
+        left: 15%;
+    }
+
+}
+
+/* check hover 액션 */
+@keyframes vibration {
+    from {
+        transform: rotate(7deg);
+    }
+
+    to {
+        transform: rotate(-8deg);
+    }
+}

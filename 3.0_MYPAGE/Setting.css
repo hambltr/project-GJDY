@@ -1,0 +1,352 @@
+@charset "UTF-8";
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+@import url(./Normalize.css);
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* reset.css가 아닌 Normalize.css로 파일 변경 
+    모든 브라우저간의 View를 통일 시켜줍니다. */
+
+/* 일반 텍스트 영역 1rem
+소메뉴타이틀(링크O) 1.3rem
+단순타이틀(링크x) 2rem */
+
+/* 버튼/인풋박스 
+작은버튼 height:35px 
+긴버튼 height:40px width:90% 
+블록버튼&inputbox width: */
+
+/* 버튼의 경우 색을 조금 손봤는데
+    디폴트 값이 회색인 경우, 대체로 비활성화 된
+    인식을 주기 때문에 저희 사이트의 아이덴티티
+    색상을 사용해보았습니다. */
+
+/* moblie 화면으로 볼 때 contents-wrap 부분에 
+발작이 일어났었으나, 이는 곧 진압되었습니다. */
+
+/* 요소 검사를 하실 때 body가 왜 중앙에 있는지,
+    해당 현상은 버그입니다 놀라지 마시길 바랍니다. 
+    잡는법은 저도 모름 */
+
+/* 작업 하실 때, 모든 작업물은
+contents-wrap 요소 안쪽에 넣어주시면 됩니다. */
+
+/* 전달드리는 요소들은 모든 요소들이 
+    확정 및 정리된 것이 아닙니다.
+    필요하시다면 추가로 공유해주세요. */
+
+/*     font-family: 'GmarketSansMedium'; */
+
+
+/* 기본 공통 요소 */
+body {
+    margin: 0 auto;
+    width: 576px;
+    height: 100vh;
+    background: #ffeedd;
+}
+
+div,
+input {
+    box-sizing: border-box;
+}
+
+/* 유저가 사용하는 영역입니다. */
+.view {
+    background: #fff;
+}
+
+.contents-wrap {
+    width: 576px;
+    min-height: 100vh;
+    padding-top: 88px;
+    padding-bottom: 98px;
+    overflow: hidden;
+    font-family: 'GmarketSansMedium';
+    color: #2D1E16;
+}
+
+/* flex 영역 감싸기 */
+.flex-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1;
+    justify-content: center;
+}
+
+/* ---------------------------------------------------------------- */
+
+
+.page {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+
+/* MyPAGE전체 영역 */
+.my-page {
+    padding: 20px;
+    margin: 0 auto;
+}
+
+
+/* 저장 버튼 */
+#savebtn {
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    background-color: #2D1E16;
+    color: #FFFFFF;
+}
+
+/* 버튼에 호버 효과 추가 */
+#savebtn:hover {
+    background-color: #FF9933;
+    transition: all 0.3s;
+}
+
+.savebox {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* 기본정보, 부가정보 */
+.my-page h1 {
+    margin: 0px 0px 30px 0px;
+    font-size: 30px;
+    color: #2d1e16;
+}
+
+/* 사진 업로드 삭제 영역 */
+.set-profile {
+    display: flex;
+    align-items: center;
+}
+
+/* 사진 업로드 동그라미 */
+#profileThumb {
+    margin-right: 15px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 0px solid #757575;
+    background-color: rgb(175, 175, 175);
+}
+
+#profileThumb img{
+    margin-right: 15px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 0px solid #757575;
+    background-color: rgb(175, 175, 175);   
+}
+
+
+/* 사진 외 텍스트 영역 묶기 */
+.set-upload {
+    height: 60px;
+}
+
+/* 업로드, 삭제 버튼 */
+.set-upload label {
+    border: none;
+    border-radius: 5px;
+    background-color: #FF9933;
+    color: #FFFFFF;
+    height: 38px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+#profiledelete {
+    border: none;
+    background-color: #FFFFFF;
+}
+
+/* 확장자, 용량 정의 */
+.set-exp {
+    margin: 10px 0px;
+}
+
+
+/* 기본정보 입력 영역 묶음 */
+.set-input {
+    margin-top: 20px;
+}
+
+/* 입력 영역 내 소타이틀 */
+.set-input label {
+    display: block;
+    font-size: 20px;
+    margin: 5px 0px;
+}
+
+/* 입력 필드 요소 */
+.set-input input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.set-input input:focus {
+    border-bottom: 1px solid #FF9933;
+    outline: none;
+}
+
+/* 비밀번호 재설정 요소 */
+#pward {
+    background-color: #FFFFFF;
+    padding: 0px;
+    border: none;
+    color: #FF9933;
+    font-size: 15px;
+    margin-bottom: 45px;
+}
+
+#pward:hover {
+    text-decoration-line: underline;
+    color: #2D1E16;
+    transition: all 0.3s;
+}
+
+/* 부가 정보 소제목 */
+.add-title {
+    display: block;
+    font-size: 20px;
+    margin: 5px 0px;
+}
+
+/* 생년월일 입력 박스 */
+.add-title+form>input[type="text"] {
+    font-size: 15px;
+    width: 15%;
+    height: 30px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    margin: 5px 0px 10px 0px;
+}
+
+.add-title+form>input[type="text"]:focus {
+    border-bottom: 1px solid #FF9933;
+    outline: none;
+}
+
+
+/* 관심사 체크박스 커스텀 */
+
+.add-title+form {
+    margin-top: 10px;
+}
+
+.add-title+form>input[type="checkbox"] {
+    display: none;
+}
+
+.add-title+form>input[type="checkbox"]+label {
+    display: inline-block;
+    font-size:18px;
+    padding:6px 15px;
+    margin-right:8px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.add-title+form>input[type="checkbox"]:checked+label {
+    background-color: #FF9933;
+    border: 1px solid #FF9933;
+    color: #FFFFFF;
+}
+
+
+/* 패스워드 재설정 영역  */
+.pwReset {
+    padding: 20px;
+    margin:0 auto;
+}
+
+.pwReset h1{
+    margin: 0px 0px 30px 0px;
+    font-size: 30px;
+    color: #2d1e16;
+}
+
+/* 라벨 스타일링 */
+.pwReset label {
+    display: block;
+    font-size: 20px;
+    margin: 10px 0px;
+}
+
+.pwReset input {
+    width: 100%;
+    padding: 10px 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.pwReset input:focus {
+    border-bottom: 1px solid #FF9933;
+    outline: none;
+}
+
+/* 버튼 스타일링 */
+.pwReset #submitbtn {
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    margin: 25px 0;
+    background-color: #2D1E16;
+    color: #FFFFFF;
+}
+
+/* 버튼에 호버 효과 추가 */
+.pwReset #submitbtn:hover {
+    background-color: #FF9933;
+    transition: all 0.3s;
+}
+
+/* ---------------------------------------------------------------- */
+
+/* 화면이 1200px 이상일 때 적용되는 요소 
+   미디어쿼리는 항상 css 최하단에 위치시켜주세요!! */
+@media screen and (min-width : 1200px) {
+
+    /* 컨텐츠 우측으로 밀기 */
+    body {
+        margin: 0;
+        position: relative;
+        left: 50%;
+    }
+
+    /* 좌측에 앱 다운로드 유도창 띄우기 */
+    .nav-side {
+        width: 375px;
+        font-family: 'GmarketSansMedium';
+        position: fixed;
+        top: 30%;
+        left: 15%;
+    }
+
+}
