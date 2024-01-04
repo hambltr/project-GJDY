@@ -45,7 +45,7 @@
         <div class="set-profile">
           <div id="profileThumb">
             <!-- 추가한 부분(임의 이미지 넣음) -->
-            <img src="./img/profile_1.png"> 
+            <img src="./img/profile_1.png">
           </div>
           <div class="set-upload">
             <label for="profileUpload">업로드</label>
@@ -142,7 +142,7 @@
       nextPage.addClass("active");
     }
 
-
+    //프로필 이미지 업로드 영역
     function profileThumbnail(inputId) {
       var imageContainer = document.querySelector("#profileThumb");
       imageContainer.innerHTML = "";
@@ -160,6 +160,33 @@
       var imageContainer = document.querySelector("#profileThumb");
       imageContainer.innerHTML = "";
     }
+
+    // //패스워드 재설정
+    // var passwordReg = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,20}$/;
+
+    // function showError(inputElement, message) {
+    //   var errorElement = $("<p class='form-error'>" + message + "</p>");
+    //   errorElement.insertAfter(inputElement);
+    //   inputElement.focus();
+    // }
+
+    // function removeError(inputElement) {
+    //   inputElement.next('.form-error').remove();
+    // }
+
+    // $("#password").on('input', function () {
+    //   removeError($(this));
+    //   if (!passwordReg.test($(this).val())) {
+    //     showError($(this), "영문자(대,소문자), 숫자, 특수문자를 포함하여 최소 8자 이상 작성해야 합니다.");
+    //   }
+    // });
+
+    // $("#confirmPassword").on('input', function () {
+    //   removeError($(this));
+    //   if ($("#password").val() !== $(this).val()) {
+    //     showError($(this), "비밀번호가 일치하지 않습니다.");
+    //   }
+    // });
 
   </script>
 </body>
