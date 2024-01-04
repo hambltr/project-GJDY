@@ -247,6 +247,13 @@ input {
     outline: none;
 }
 
+.form-error {
+    font-size: 0.9rem;
+    text-align: left;
+    margin: 0;
+    color: red;
+}
+
 
 /* 관심사 체크박스 커스텀 */
 

@@ -65,7 +65,8 @@
           <input type="email" id="email" name="email">
 
           <label for="phone">휴대폰 번호</label>
-          <input type="tel" id="phone" name="phone">
+          <input type="tel" id="tel" name="tel" pattern="[0-9]" inputmode="numeric" maxlength="11" placeholder="숫자만 입력하세요">
+
 
           <button id="pward" onclick="showPage('pwReset')">
             비밀번호 재설정&nbsp;↗</button>
@@ -109,13 +110,13 @@
         <form>
           <h1>비밀번호 재설정</h1>
           <label for="current-password">기존 비밀번호</label>
-          <input type="password" id="current-password" name="current-password" placeholder="기존 비밀번호를 입력하세요">
+          <input type="password" id="password" name="password" placeholder="기존 비밀번호를 입력하세요" required>
 
           <label for="new-password">새 비밀번호</label>
-          <input type="password" id="new-password" name="new-password" placeholder="새로운 비밀번호를 입력하세요">
+          <input type="password" id="new-password" name="new-password" placeholder="새로운 비밀번호를 입력하세요" required>
 
           <label for="confirm-password">비밀번호 확인</label>
-          <input type="password" id="confirm-password" name="confirm-password" placeholder="비밀번호를 다시 입력하세요">
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="비밀번호를 다시 입력하세요" required>
 
           <button type="submit" id="submitbtn">저장</button>
 
@@ -142,6 +143,7 @@
       nextPage.addClass("active");
     }
 
+
     //프로필 이미지 업로드 영역
     function profileThumbnail(inputId) {
       var imageContainer = document.querySelector("#profileThumb");
@@ -161,32 +163,49 @@
       imageContainer.innerHTML = "";
     }
 
-    // //패스워드 재설정
-    // var passwordReg = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,20}$/;
+    //정보 유효성 처리
+    var telReg = /^\d{11}$/;
+    var passwordReg = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,20}$/;
 
-    // function showError(inputElement, message) {
-    //   var errorElement = $("<p class='form-error'>" + message + "</p>");
-    //   errorElement.insertAfter(inputElement);
-    //   inputElement.focus();
-    // }
+    function showError(inputElement, message) {
+      var errorElement = $("<p class='form-error'>" + message + "</p>");
+      errorElement.insertAfter(inputElement);
+      inputElement.focus();
+    }
 
-    // function removeError(inputElement) {
-    //   inputElement.next('.form-error').remove();
-    // }
+    function removeError(inputElement) {
+      inputElement.next('.form-error').remove();
+    }
 
-    // $("#password").on('input', function () {
-    //   removeError($(this));
-    //   if (!passwordReg.test($(this).val())) {
-    //     showError($(this), "영문자(대,소문자), 숫자, 특수문자를 포함하여 최소 8자 이상 작성해야 합니다.");
-    //   }
-    // });
+    $("#tel").on('input', function (event) {
+      removeError($(this));
+      var originalValue = $(this).val();
+      var sanitizedValue = originalValue.replace(/-/g, ''); // 하이픈 제거
 
-    // $("#confirmPassword").on('input', function () {
-    //   removeError($(this));
-    //   if ($("#password").val() !== $(this).val()) {
-    //     showError($(this), "비밀번호가 일치하지 않습니다.");
-    //   }
-    // });
+      if (!telReg.test(sanitizedValue)) {
+        showError($(this), "잘못된 휴대폰 번호 형식입니다.");
+      }
+
+      $(this).val(sanitizedValue);
+
+      if (event.originalEvent) {
+        event.preventDefault();
+      }
+    });
+
+    $("#new-password").on('input', function () {
+      removeError($(this));
+      if (!passwordReg.test($(this).val())) {
+        showError($(this), "영문자(대,소문자), 숫자, 특수문자를 포함하여 최소 8자 이상 작성해야 합니다.");
+      }
+    });
+
+    $("#confirmPassword").on('input', function () {
+      removeError($(this));
+      if ($("#new-password").val() !== $(this).val()) {
+        showError($(this), "비밀번호가 일치하지 않습니다.");
+      }
+    });
 
   </script>
 </body>

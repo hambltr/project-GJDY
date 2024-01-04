@@ -604,6 +604,10 @@ input {
     padding: 20px 0px;
 }
 
+#fixedblock, #bankblock{
+    width:100%;
+}
+
 
 /* 참가 인원 제한 */
 
