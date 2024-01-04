@@ -178,6 +178,7 @@ width가 1200미만일 땐, 숨겨져 있습니다. */
     left:520px;
     top:-56px;
     z-index: 100000;
+    cursor: pointer;
     display:none;
 }
 

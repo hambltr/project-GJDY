@@ -70,6 +70,7 @@
                     </div>
                     <div class="navRight">
                         <i class="bi bi-share" id="share"></i>
+                        <i class="bi bi-box-arrow-in-right" onclick="signin()"></i>
                         <i class="bi bi-plus-square" id="square"></i>
                     </div>
                 </div>
@@ -112,6 +113,9 @@
 
             <script>
 
+                function signin() { //MY페이지
+                    window.location.href = 'login.html';
+                }
                 function doyomain() { //메인
                     window.location.href = 'index.html';
                 }
@@ -141,6 +145,7 @@
                         '/2.2.1_challenge-main-detail.html',
                         '/2.2.2_challenge-join.html',
                         '/2.3_chalSetup.html',
+                        '/2.4_verify-list.html',
                         '/3.2_Setting.html',
                         '/2.4.1_challenge-verification.html',
                         '/3.3_deposit.html',
@@ -191,13 +196,22 @@
                     }
                 });
 
+                //메인에 로그인 버튼
+                $(document).ready(function () {
+                    var currentPage = window.location.pathname;
+
+                    if (currentPage === '/index.html') {
+                        $('.navRight i:nth-child(2)').css('display', 'block');
+                    }
+                });
+
                 //공유 버튼 추가하기
                 $(document).ready(function () {
                     var currentPage = window.location.pathname;
 
                     var targetPages = [
-                    '/2.2.2_challenge-join.html',
-                    '/2.2_challenge-main.html',
+                        '/2.2.2_challenge-join.html',
+                        '/2.2_challenge-main.html',
                     ];
 
                     if (targetPages.includes(currentPage)) {
