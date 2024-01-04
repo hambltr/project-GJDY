@@ -96,7 +96,7 @@ ul {
     width: 576px;
     min-height: 100vh;
     padding-top: 88px;
-    padding-bottom: 98px;
+    padding-bottom: 98px !important;
     overflow: hidden;
     margin: auto;
 }
@@ -173,6 +173,17 @@ input:focus {
     font-size: 0.9rem;
     color: red;
 }
+
+.bottom-btn {
+    font-family: "GmarketSansMedium";
+    position: fixed;
+    bottom: 0;
+    z-index: 99999;
+    width:576px;
+    padding-top:15px;
+    background-color: #eeecec;
+}
+
 
 .buy-btn {
     display: flex;

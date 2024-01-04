@@ -162,6 +162,7 @@ width가 1200미만일 땐, 숨겨져 있습니다. */
     position: fixed;
     z-index: 100000;
     top: 11px;
+    visibility: hidden; 
 }
 
 .contents-nav i::before {
@@ -169,14 +170,16 @@ width가 1200미만일 땐, 숨겨져 있습니다. */
     cursor: pointer;
 }
 
-.navRight {
+.navRight i {
+    font-size: 2rem;
     display: flex;
-    width:62px;
+    width:32px;
     position: relative;
-    left:510px;
-    top:-65px;
+    left:520px;
+    top:-56px;
+    z-index: 100000;
+    display:none;
 }
-
 
 /* nav 하단바 - 위치 */
 .nav-bottom {

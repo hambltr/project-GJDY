@@ -68,9 +68,9 @@
                     <div class="contents-nav">
                         <i onclick="goBack()" class="bi bi-arrow-left"></i>
                     </div>
-                    <div class="contents-nav navRight">
-                        <i class="bi bi-share"></i>
-                        <!-- <i class="bi bi-plus-square"></i> -->
+                    <div class="navRight">
+                        <i class="bi bi-share" id="share"></i>
+                        <i class="bi bi-plus-square" id="square"></i>
                     </div>
                 </div>
 
@@ -132,16 +132,76 @@
                     window.history.back();
                 }
 
+                //바텀 네비 삭제 + 뒤로가기 버튼 만들기
                 $(document).ready(function () {
-                    // 현재 페이지의 경로 확인
                     var currentPage = window.location.pathname;
 
-                    //header요소 숨기기
-                    if (currentPage === '/3.2_Setting.html') {
+                    var targetPages = [
+                        '/2.2_challenge-main.html',
+                        '/2.2.1_challenge-main-detail.html',
+                        '/2.2.2_challenge-join.html',
+                        '/2.3_chalSetup.html',
+                        '/3.2_Setting.html',
+                        '/2.4.1_challenge-verification.html',
+                        '/3.3_deposit.html',
+                        '/3.4_gifticon.html',
+                        '/3.5_chalReportMain.html',
+                        '/3.6_chalReportDetail.html',
+                        '/3.8_chalManagerDetail.html',
+                        '/4.2.1_noticeDetail.html',
+                        '/4.3_FAQ.html',
+                        '/4.4.1_inquiryDetail.html',
+                        '/4.4.5_inquiryForm.html',
+                    ];
+
+                    if (targetPages.includes(currentPage)) {
                         $('.nav-bottom').hide();
-                        $('.contents-wrap').css({
-                            'padding-bottom': '10px'
-                        });
+                        $('.contents-nav').css('visibility', 'visible');
+                        $('.contents-wrap').css('padding-bottom', '10px');
+                    }
+                });
+
+                //뒤로가기 버튼만 만들기
+                $(document).ready(function () {
+                    var currentPage = window.location.pathname;
+
+                    var targetPages = [
+                        '/1.2_find-id.html',
+                        '/1.2.1_find-pw.html',
+                        '/2.1_challenge-list.html',
+                        '/2.7_Calendar.html',
+                        '/3.3.1_doyocoin.html',
+                        '/3.4.1_gifticon-detail.html',
+                        '/3.7_chalManagerMain.html',
+                        '/4.2_noticeMain.html',
+                        '/4.4_inquiryMain.html',
+                    ];
+
+                    if (targetPages.includes(currentPage)) {
+                        $('.contents-nav').css('visibility', 'visible');
+                    }
+                });
+
+                //플러스 버튼 추가하기
+                $(document).ready(function () {
+                    var currentPage = window.location.pathname;
+
+                    if (currentPage === '/2.1_challenge-list.html') {
+                        $('.navRight i:last-child').css('display', 'block');
+                    }
+                });
+
+                //공유 버튼 추가하기
+                $(document).ready(function () {
+                    var currentPage = window.location.pathname;
+
+                    var targetPages = [
+                    '/2.2.2_challenge-join.html',
+                    '/2.2_challenge-main.html',
+                    ];
+
+                    if (targetPages.includes(currentPage)) {
+                        $('.navRight i:first-child').css('display', 'block');
                     }
                 });
             </script>
