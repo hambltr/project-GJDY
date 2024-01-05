@@ -269,7 +269,7 @@ input {
 .chalsetup [type="radio"]+label {
     cursor: pointer;
     font-size: 15px;
-    margin: 0px 0px 5px;
+    margin: 5px;
 }
 
 .chalsetup [type="radio"] {
@@ -352,32 +352,19 @@ input {
 
 
 /* 카테고리 선택 영역 */
-.setup-cate {
-    padding: 20px 0px;
-}
 
 .setup-cate h3 {
     margin-bottom: 10px;
 }
 
 /* 스크롤 커스텀 */
-.cate-select::-webkit-scrollbar {
-    height: 10px;
+.setup-cate {
+padding-top:10px;
 }
 
-::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 153, 51, 30%);
-}
-
-.cate-scroll {
-    margin: 3px 3px 10px;
-    width: 930px;
-}
-
-.cate-select {
-    /* display:flex; */
-    overflow-x: auto;
-
+.cate-scroll{
+    width:600px;
+   
 }
 
 /* 카테고리 선택 라디오 css */
@@ -388,8 +375,7 @@ input {
 .setup-cate input[type="radio"]+label {
     display: inline-block;
     font-size: 20px;
-    padding: 5px 15px;
-    margin-right: 15px;
+    padding: 8px 15px 5px;
     border: 1px solid #ddd;
     border-radius: 30px;
     cursor: pointer;

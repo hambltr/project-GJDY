@@ -65,18 +65,13 @@
 
           <div class="setup-cate">
             <h3>카테고리 선택 <span>*</span></h3>
-            <div class="cate-select">
-              <div class="cate-scroll">
-                <input type="radio" name="setup-cate" id="cate1"><label for="cate1">분류1</label>
-                <input type="radio" name="setup-cate" id="cate2"><label for="cate2">분류2</label>
-                <input type="radio" name="setup-cate" id="cate3"><label for="cate3">분류3</label>
-                <input type="radio" name="setup-cate" id="cate4"><label for="cate4">분류4</label>
-                <input type="radio" name="setup-cate" id="cate5"><label for="cate5">분류5</label>
-                <input type="radio" name="setup-cate" id="cate6"><label for="cate6">분류6</label>
-                <input type="radio" name="setup-cate" id="cate7"><label for="cate7">분류7</label>
-                <input type="radio" name="setup-cate" id="cate8"><label for="cate8">분류8</label>
-                <input type="radio" name="setup-cate" id="cate9"><label for="cate9">분류9</label>
-              </div>
+            <div class="cate-scroll">
+                <input type="radio" name="setup-cate" id="cate1"><label for="cate1">운동</label>
+                <input type="radio" name="setup-cate" id="cate2"><label for="cate2">식습관</label>
+                <input type="radio" name="setup-cate" id="cate3"><label for="cate3">생활</label>
+                <input type="radio" name="setup-cate" id="cate4"><label for="cate4">정서</label>
+                <input type="radio" name="setup-cate" id="cate5"><label for="cate5">취미</label>
+                <input type="radio" name="setup-cate" id="cate6"><label for="cate6">환경</label>
             </div>
           </div>
 
@@ -184,12 +179,12 @@
               <label for="bankfixed" style="font-size:16px">고정 예치금</label>
             </h3>
             <div id="bankblock">
-              <p>최소 1만원 ~ 최대 20만원까지 설정할 수 있어요. (10,000원 단위)</p>
+              <p>최소 1만원 ~ 최대 20만원까지 설정할 수 있어요.</p>
               <input type="text" id="moneyset" maxlength="8">
             </div>
 
             <div style="display: none;" id="fixedblock">
-              <p>최소 1,000원부터 설정할 수 있어요. (1,000원 단위)</p>
+              <p>최소 1,000원부터 설정할 수 있어요.</p>
               <input type="text" id="moneyfixed" maxlength="8">
             </div>
           </div>
@@ -256,8 +251,7 @@
               <h5>내 챌린지를 표현하는 단어를 추가해 보세요!<br>
                 (검색 키워드로 활용됩니다.)</h5>
 
-              <input type="text" id="keyword-form" style="display: none;"
-                placeholder="스페이스바로 구분하며 특수문자 사용이 불가합니다.">
+              <input type="text" id="keyword-form" style="display: none;" placeholder="스페이스바로 구분하며 특수문자 사용이 불가합니다.">
             </div>
           </div>
 
@@ -316,6 +310,7 @@
 
   <script>
     //챌린지 개설하기 메인화면 스크립트
+
 
     //글자 수 제한 처리
     function handleInput(inputElement, charCountId) {
