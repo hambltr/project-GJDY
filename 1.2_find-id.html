@@ -28,84 +28,81 @@
 <body>
     <section class="view">
         <div id="header"></div>
-            <div class="contents-wrap">
-                <div class="find-idpw">
-                    <h1>아이디 찾기</h1>
-                    <div class="find-idpw-tab">
-                        <div class="find-idpw-item buttoned find1">
-                            <p>전화번호로 찾기</p>
+        <div class="contents-wrap">
+            <div class="find-idpw">
+                <h1>아이디 찾기</h1>
+                <div class="find-idpw-tab">
+                    <div class="find-idpw-item buttoned find1">
+                        <p>전화번호로 찾기</p>
+                    </div>
+                    <div class="find-idpw-item-wrap active">
+                        <div class="find-idpw-form">
+                            <label></label>
+                            <input type="text" id="username" name="username" required placeholder="회원명" maxlength="30">
                         </div>
-                        <div class="find-idpw-item-wrap active">
-                            <div class="find-idpw-form">
-                                <label></label>
-                                <input type="text" id="username" name="username" required placeholder="회원명"
-                                    maxlength="30">
+                        <div class="find-idpw-form">
+                            <label></label>
+                            <input type="tel" id="tel" name="tel" required placeholder="휴대폰 번호 (숫자만 입력하세요)"
+                                pattern="[0-9]" inputmode="numeric" maxlength="11">
+                        </div>
+                        <div class="find-idpw-form">
+                            <input type="text" id="sms" name="sms" required placeholder="인증번호 입력" maxlength="6">
+                            <div class="f-id-verification" role="button">인증하기</i>
                             </div>
-                            <div class="find-idpw-form">
-                                <label></label>
-                                <input type="tel" id="tel" name="tel" required placeholder="휴대폰 번호 (숫자만 입력하세요)"
-                                    pattern="[0-9]" inputmode="numeric" maxlength="11">
+                        </div>
+                        <button class="form-btn">인증번호 받기</button>
+                    </div>
+                    <div class="find-idpw-item buttoned find2">
+                        <p>이메일로 찾기</p>
+                    </div>
+                    <div class="find-idpw-item-wrap">
+                        <div class="find-idpw-form">
+                            <label></label>
+                            <input type="text" id="username" name="username" required placeholder="회원명" maxlength="30">
+                        </div>
+                        <div class="find-idpw-form">
+                            <label></label>
+                            <input type="tel" id="tel" name="tel" required placeholder="이메일 주소를 입력하세요." maxlength="30">
+                        </div>
+                        <div class="find-idpw-form">
+                            <input type="text" id="sms" name="sms" required placeholder="인증번호 입력" maxlength="6">
+                            <div class="f-id-verification" role="button">인증하기</i>
                             </div>
-                            <div class="find-idpw-form">
-                                <input type="text" id="sms" name="sms" required placeholder="인증번호 입력" maxlength="6">
-                                <div class="f-id-verification" role="button">인증하기</i>
-                                </div>
-                            </div>
-                            <button class="form-btn">인증번호 받기</button>
                         </div>
-                        <div class="find-idpw-item buttoned find2">
-                            <p>이메일로 찾기</p>
-                        </div>
-                        <div class="find-idpw-item-wrap">
-                            <div class="find-idpw-form">
-                                <label></label>
-                                <input type="text" id="username" name="username" required placeholder="회원명"
-                                    maxlength="30">
-                            </div>
-                            <div class="find-idpw-form">
-                                <label></label>
-                                <input type="tel" id="tel" name="tel" required placeholder="이메일 주소를 입력하세요."
-                                    maxlength="30">
-                            </div>
-                            <div class="find-idpw-form">
-                                <input type="text" id="sms" name="sms" required placeholder="인증번호 입력" maxlength="6">
-                                <div class="f-id-verification" role="button">인증하기</i>
-                                </div>
-                            </div>
-                            <button class="form-btn">인증번호 받기</button>
-                        </div>
-                        <div class="find-idpw-item buttoned find3">
-                            <p>휴대폰 본인인증으로 찾기</p>
-                        </div>
-                        <div class="find-idpw-item-wrap flex-dir-col">
-                            <p style="margin: 15px 0 10px;">
-                                안전한 통신사 본인인증(PASS)에서 인증합니다.<br>
-                                (PASS 간편인증 또는 문자인증으로 본인인증 가능)
-                            </p>
-                            <button class="form-btn">아이디 찾기</button>
-                        </div>
-                        <div class="find-idpw-item buttoned find4">
-                            <p>아이핀 본인인증으로 찾기</p>
-                        </div>
-                        <div class="find-idpw-item-wrap flex-dir-col">
-                            <p style="margin: 15px 0 10px;">
-                                아이핀 인증이 완료된 후에,<br>
-                                해당 명의(이름)로 가입된 아이디를 찾습니다.
-                            </p>
-                            <button class="form-btn">아이디 찾기</button>
-                        </div>
+                        <button class="form-btn">인증번호 받기</button>
+                    </div>
+                    <div class="find-idpw-item buttoned find3">
+                        <p>휴대폰 본인인증으로 찾기</p>
+                    </div>
+                    <div class="find-idpw-item-wrap flex-dir-col">
+                        <p style="margin: 15px 0 10px;">
+                            안전한 통신사 본인인증(PASS)에서 인증합니다.<br>
+                            (PASS 간편인증 또는 문자인증으로 본인인증 가능)
+                        </p>
+                        <button class="form-btn">아이디 찾기</button>
+                    </div>
+                    <div class="find-idpw-item buttoned find4">
+                        <p>아이핀 본인인증으로 찾기</p>
+                    </div>
+                    <div class="find-idpw-item-wrap flex-dir-col">
+                        <p style="margin: 15px 0 10px;">
+                            아이핀 인증이 완료된 후에,<br>
+                            해당 명의(이름)로 가입된 아이디를 찾습니다.
+                        </p>
+                        <button class="form-btn">아이디 찾기</button>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
     </section>
 
-    
+
     <script>
 
-$(function () {
-      $("#header").load("header.html");
-    });
+        $(function () {
+            $("#header").load("header.html");
+        });
         //버튼 조작
         $(document).ready(function () {
             $(".buttoned").click(function () {
