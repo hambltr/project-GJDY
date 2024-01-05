@@ -229,8 +229,8 @@ li {
     width: 80px;
     height: 80px;
     position: relative;
-    bottom:0px;
-    right:20px;
+    top:460px;
+    /* right:20px; */
     padding-top: 5px;
     background-color: rgba(255, 214, 173, 0.5);
     border-radius: 50%;
