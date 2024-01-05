@@ -37,8 +37,8 @@
                     <h1>1:1문의 접수<span onclick="myinquiryList()">문의 내역 보기</span></h1>
                     <br>
                     <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" required><br>
-                
+                    <input type="email" id="email" name="email" placeholder="필수 항목입니다." required><br>
+
                     <label for="inquiryType">문의 유형</label>
                     <select id="inquiryType" name="inquiryType" required>
                         <option value="none" selected>문의 유형을 선택하세요.</option>
@@ -50,12 +50,16 @@
                         <option value="기타">기타</option>
                     </select><br>
 
-                    <label for="subject">문의 제목</label>
-                    <input type="text" id="subject" name="subject" required><br>
+                    <label for="inquirTitle">문의 제목<br><span id="inquirTitle-warning" class="warning"></span></label>
+                    <input type="text" id="inquirTitle" name="title" placeholder="10글자 이상 입력하세요."
+                        onblur="checkLength('inquirTitle', 10)" required><br>
+                        <br>
 
-                    <label for="message">문의 내용</label>
-                    <textarea id="message" name="message" rows="6" required></textarea><br>
-                
+                    <label for="inquiryContents">문의 내용<br><span id="inquiryContents-warning" class="warning"></span></label>
+                    <textarea id="inquiryContents" name="message" rows="6" placeholder="20글자 이상 입력하세요."
+                        onblur="checkLength('inquiryContents', 20)" required></textarea><br>
+
+
                     <button type="submit">제출</button>
                 </form>
             </div>
@@ -72,7 +76,19 @@
             $("#header").load("./header.html");
         });
 
-        function myinquiryList(){
+        function checkLength(id, minLength) {
+            var input = document.getElementById(id);
+            var currentLength = input.value.length;
+            var warningId = id + '-warning';
+
+            if (currentLength < minLength) {
+                document.getElementById(warningId).innerText = '최소 ' + minLength + '자 이상 입력하세요.';
+            } else {
+                document.getElementById(warningId).innerText = '';
+            }
+        }
+
+        function myinquiryList() {
             window.location.href = '4.4_inquiryMain.html';
         }
 

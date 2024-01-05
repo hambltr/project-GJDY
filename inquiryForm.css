@@ -114,7 +114,7 @@ input {
 .inquiryform-wrap label {
     display: block;
     font-size: 20px;
-    margin: 10px 0px;
+    margin: 5px 0px;
 
 }
 
@@ -151,7 +151,7 @@ input {
     outline: none;
 }
 
-.inquiryform-wrap #message {
+.inquiryform-wrap #inquiryContents {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -161,9 +161,14 @@ input {
     resize: none;
 }
 
-.inquiryform-wrap #message:focus {
+.inquiryform-wrap #inquiryContents:focus {
     border-bottom: 1px solid #FF9933;
     outline: none;
+}
+
+.inquiryform-wrap .warning {
+    color: red;
+    font-size: 0.8em;
 }
 
 /* 제출버튼 */

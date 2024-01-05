@@ -37,10 +37,23 @@
                     <h1>내 문의 내역</h1>
 
                     <div class="ask-box" onclick="myinquiryDetail()">
-                        <div class="askbox-text"><span>문의 제목 영역입니다.</span>
-                            <div class="formattedDate">YYYY-MM-DD HH:MM</div>
+                        <div class="askbox-text"><span>재 첼린지 외 거절됫나요?</span>
+                            <div class="formattedDate">2024-01-01 15:01</div>
                         </div>
                         <div class="ask-ing">진행중</div>
+                    </div>
+
+                    <div class="ask-box">
+                        <div class="askbox-text"><span>잘했도요 좋아요~</span>
+                            <div class="formattedDate">2023-12-31 15:33</div>
+                        </div>
+                        <div class="ask-clear">완료</div>
+                    </div>
+
+                    <div class="ask-box">
+                        <div class="askbox-text"><span>기프티콘 더 넣어주세요.</span>
+                            <div class="formattedDate">2023-12-19 19:00</div>
+                        </div>
                         <div class="ask-clear">완료</div>
                     </div>
 
@@ -64,18 +77,18 @@
         }
 
         // 진행중,완료 변경
-        document.addEventListener('DOMContentLoaded', function() {
-        var csStatus = 0;
+    //     document.addEventListener('DOMContentLoaded', function() {
+    //     var csStatus = 1;
 
-        var ingDiv = document.querySelector('.ask-ing');
-        var finishDiv = document.querySelector('.ask-clear');
+    //     var ingDiv = document.querySelector('.ask-ing');
+    //     var finishDiv = document.querySelector('.ask-clear');
 
-        if (csStatus === 0) {
-            finishDiv.style.display = 'block';
-        } else {
-            ingDiv.style.display = 'block';
-        }
-    });
+    //     if (csStatus === 0) {
+    //         finishDiv.style.display = 'block';
+    //     } else {
+    //         ingDiv.style.display = 'block';
+    //     }
+    // });
     </script>
 </body>
 
