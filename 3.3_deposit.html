@@ -20,38 +20,37 @@
 </head>
 
 <body>
-    <section class="view">
-        <div id="header"></div>
-        <div class="bottom-btn">
-            <ul>
-                <div class="buy-btn" id="chargeButton">
-                    <p>충전하기</p>
-                </div>
-            </ul>
+  <section class="view">
+    <div id="header"></div>
+    <div class="bottom-btn">
+      <ul>
+        <div class="buy-btn" id="chargeButton">
+          <p>충전하기</p>
         </div>
-            <div class="contents-wrap">
-                <div class="exit-btn">
-                    <a href="3.1_mypageMain.html">
-                        <i class="bi bi-x-lg"></i>
-                    </a>
-                </div>
-                <div class="deposit-info-wrap">
-                    <h1>
-                        보유중인 예치금
-                    </h1>
-                    <h2 id="depositAmount"> 원</h2>
-                    <div class="charge">
-                        <h1>충전하기</h1>
-                        <input type="text" id="deposit" name="deposit" maxlength="8" required
-                            placeholder="충전하실 금액을 입력하세요.">
-                        <div id="message"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </section>
-    <script>
-            $(function () {
+      </ul>
+    </div>
+    <div class="contents-wrap">
+      <div class="exit-btn">
+        <a href="3.1_mypageMain.html">
+          <i class="bi bi-x-lg"></i>
+        </a>
+      </div>
+      <div class="deposit-info-wrap">
+        <h1>
+          보유중인 예치금
+        </h1>
+        <h2 id="depositAmount"> 원</h2>
+        <div class="charge">
+          <h1>충전하기</h1>
+          <input type="text" id="deposit" name="deposit" maxlength="8" required placeholder="충전하실 금액을 입력하세요.">
+          <div id="message"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </section>
+  <script>
+    $(function () {
       $("#header").load("header.html");
     });
     

@@ -199,7 +199,12 @@
                 $(document).ready(function () {
                     var currentPage = window.location.pathname;
 
-                    if (currentPage === '/2.1_challenge-list.html') {
+                    var targetPages = [
+                        '/2.1_challenge-list.html',
+                        '/3.7_chalManagerMain.html'
+                    ];
+
+                    if (targetPages.includes(currentPage)) {
                         $('.navRight i:last-child').css('display', 'block');
                     }
                 });
