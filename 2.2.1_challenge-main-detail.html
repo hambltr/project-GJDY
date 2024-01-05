@@ -34,42 +34,50 @@
                 </div>
             </ul>
         </div>
-            <div class="contents-wrap">
-                <div class="challenge-charge">
-                    <div class="ch-th-info">
-                        <img src="img/drowing.jpg">
-                        <div>
-                            <h1>드로잉/크로키 연습</h1>
-                            <h2>참여비: 0원</h2>
-                        </div>
-                    </div>
-                    <div class="ch-th-info2">
-                        <h2>충전 및 결제</h2>
-                        <div>
-                            <h3>참가 예치금</h3>
-                            <h3 id="need-diposit">0원</h3>
-                        </div>
-                        <div>
-                            <h3>보유중인 예치금</h3>
-                            <h3 id="my-diposit">0원</h3> 
-                        </div>
-                    </div>
-                    <div class="charge-term">
-                        <input type="checkbox" id="d-terms" name="d-terms">
-                        <span>결제 조건 및 서비스 약관에 동의합니다.</span>
+        <div class="contents-wrap">
+            <div class="challenge-charge">
+                <div class="ch-th-info">
+                    <img src="img/drowing.jpg">
+                    <div>
+                        <h1>드로잉/크로키 연습</h1>
+                        <h2>참여비: 0원</h2>
                     </div>
                 </div>
+                <div class="ch-th-info2">
+                    <h2>충전 및 결제</h2>
+                    <div>
+                        <h3>참가 예치금</h3>
+                        <h3 id="need-diposit">0원</h3>
+                    </div>
+                    <div>
+                        <h3>보유중인 예치금</h3>
+                        <h3 id="my-diposit">0원</h3>
+                    </div>
+                </div>
+                <div class="charge-term">
+                    <input type="checkbox" id="d-terms" name="d-terms">
+                    <span>결제 조건 및 서비스 약관에 동의합니다.</span>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-        <script>
-            $(function () {
-      $("#header").load("header.html");
-    });</script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.buy-btn').on('click', function () {
+                window.location.href = '2.4_verify-list.html';
+            });
+        });
+    </script>
 </body>
 
 </html>
