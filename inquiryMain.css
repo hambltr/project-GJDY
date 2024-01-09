@@ -112,12 +112,12 @@ input {
 }
 
 .formattedDate {
-    font-size: 13px;
+    font-size: 15px;
 }
 
 /* 진행중 표시 */
 .ask-ing {
-    display: none;
+    /* display: none; */
     font-size: 15px;
     width: 60px;
     height: 30px;
@@ -132,7 +132,7 @@ input {
 
 /* 완료 표시 */
 .ask-clear{
-    display: none;
+    /* display: none; */
     font-size: 15px;
     width: 60px;
     height: 30px;

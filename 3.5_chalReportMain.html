@@ -53,9 +53,9 @@
                             챌린지</button>
                     </div>
                     <div class="report-preview" onclick="chalReportDetail()">
-                        <img src="./img/profile_1.png">
+                        <img src="./img/water.jpg">
                         <span>
-                            <h3>물 500잔 마시기</h3>
+                            <h3>물 3잔 마시기</h3>
                             <h4>평일 매일</h4>
                             <h5>23.12.21(목) ~ 23.12.31(일)</h5>
                             <h6>100% 달성</h6>
@@ -99,15 +99,15 @@
         //그래프 영역
         const challengeData = [0, 1, 3, 7, 5, 29, 4, 6, 8, 9, 10, 3];
 
-        // 초기화 함수
+
         function initializeGraph() {
             const monthlyGraphs = document.getElementById('monthlyGraphs');
             const totalChallenges = document.getElementById('totalChallenges');
 
-            // 기존 그래프 초기화
+
             monthlyGraphs.innerHTML = '';
 
-            // 데이터 개수만큼 그래프 생성
+
             challengeData.forEach((count, index) => {
                 const li = document.createElement('li');
                 const spanMonth = document.createElement('span');
@@ -126,12 +126,10 @@
                 monthlyGraphs.appendChild(li);
             });
 
-            // 전체 챌린지 개수 업데이트
             const total = challengeData.reduce((acc, val) => acc + val, 0);
             totalChallenges.textContent = total;
         }
 
-        // 초기화 함수 호출
         initializeGraph();
     </script>
 </body>
